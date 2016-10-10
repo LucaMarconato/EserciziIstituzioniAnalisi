@@ -11,6 +11,7 @@ texput.log
 *.tex.blg
 *.thm
 *.toc
+*.pdf
 
 # emacs 
 *~
