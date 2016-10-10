@@ -1,17 +1,19 @@
 \ProvidesPackage{notations}
 
 \RequirePackage{ifthen}
+\RequirePackage{mathtools}
+
+
 
 % Shortcuts
 % Generic
-\newcommand{\:=}{\ensuremath{\coloneqq}}
 \newcommand{\de}{\ensuremath{\,\mathrm d}}                            % For integrals
 
 % Gothics
 \newcommand\A{\ensuremath{\mathfrak A}}                               %Ring
-\newcommand\M{\ensuremath{\mathfrak M}}                               %
-\newcommand\P{\ensuremath{\mathfrak P}}                               %Semiring or pseudoring
 \newcommand\E{\ensuremath{\mathfrak E}}                               %
+\newcommand\M{\ensuremath{\mathfrak M}}                               %
+\renewcommand\P{\ensuremath{\mathfrak P}}                             %Semiring or pseudoring
 
 % Standard sets
 \ifthenelse{\isundefined{\C}}{                                        %Complex numbers; ensure pdflatex-xelatex compatibility
@@ -38,3 +40,6 @@
 \newcommand{\ioo}[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
 
 
+% Math delimiters
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}

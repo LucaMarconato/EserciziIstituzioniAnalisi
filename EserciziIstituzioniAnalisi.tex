@@ -1,14 +1,29 @@
 \documentclass[a4paper,twoside,10pt,italian]{article}
 
-\usepackage[utf8]{inputenc}                                                               %unicode input (e.g. stresses)
-\usepackage{notations}                                                                    %custom commands
+\usepackage[utf8]{inputenc}                                                               %Unicode input (e.g. stresses)
+\usepackage[T1]{fontenc}                                                                  %Use new fonts in pdf
+\usepackage[thref, amsthm, hyperref, thmmarks]{ntheorem} 
+\usepackage{babel}                                                                        %Localization
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{indentfirst}                                                                  %Indent first line in section
+\usepackage{mathrsfs}
+\usepackage{notations}                                                                    %Custom commands
+\usepackage{subfiles}                                                                     %split document
+\usepackage{makeidx}                                                                      %Analytical index
+
+\usepackage{hyperref}                                                                     %References become hyperlinks.
+
+\usepackage[capitalise]{cleveref}                                                         %Better references
+
 
 \title{Esercizi di analisi}
-\author{Francesco Florian, Ilaria Fontana, Ariel Aldo Giovanni Lanza, Luca Marconato}
+\author{Francesco Florian, Ilaria Fontana,\\ Ariel Aldo Giovanni Lanza, Luca Marconato}
 
 \begin{document}
 
- \maketitlepage
+ \maketitle
  \tableofcontents
  \input{elenco.tex}
 
