@@ -1,0 +1,37 @@
+\documentclass[../main.tex]{subfiles} 
+\begin{document}
+
+\exercise[10/10/2016]{1} %g2
+Dimostrare che
+\begin{equation}
+  \begin{aligned}    
+  \label{eq:1}
+  \Bor{\R} &=   \sigma(\left{]a,b[\colon a, b \in \R\right}) \\
+  & = \sigma(\left{]a,b[\colon a, b \in \Q\right}) \\
+  &= \sigma(\left{]a,b]\colon a, b \in \Q\right}) \\
+  &= \sigma(\E_{i})
+  \end{aligned}
+\end{equation}
+dove
+\begin{itemize}
+\item $\E_{1}\coloneqq \{]a,+\infty[:a \in \R\}$;
+\item $\E_{2}\coloneqq \{[a,+\infty[:a \in \R\}$;
+\item $\E_{3}\coloneqq \{]+\infty,b[:b \in \R\}$;
+\item $\E_{4}\coloneqq \{]+\infty,b]:b \in \R\}$.
+\end{itemize}
+
+\solution
+
+\exercise
+Sia $  \emptyset \neq \E_{0} \subseteq \P(X)$ e per $\alpha$ ordinale sia 
+\begin{equation}
+  \label{eq:2}
+  \E_{\alpha}\coloneqq \left{ \bigcup_{n\in \N} (A_{n}\setminus B_{n} \: a_{n},B_{n} \in \bigcup_{\beta<\alpha}\E_{\beta})\right}.
+\end{equation}
+Dimostrare allora che $\sigma(\E)_{0}=\bigcup_{\alpha<\omega_{1}}\E_{\alpha}$.
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
