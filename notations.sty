@@ -3,11 +3,18 @@
 \RequirePackage{ifthen}
 \RequirePackage{mathtools}
 
+%% Environment
+\theoremstyle{plain}
+\newtheorem{exercise}{Esercizio}
+
+%% Mathrm
+\DeclareMathOperator\Bor{Bor}
+        \DeclareMathOperator\Ord{Orda}
 
 
-% Shortcuts
+%% Shortcuts
 % Generic
-\newcommand{\de}{\ensuremath{\,\mathrm d}}                            % For integrals
+\newcommand\de{\ensuremath{\,\mathrm d}}                              %For integrals
 
 % Gothics
 \newcommand\A{\ensuremath{\mathfrak A}}                               %Ring
@@ -27,19 +34,19 @@
 \newcommand\Z{\ensuremath{\mathbb Z}}                                 %Integers
 
 
-% Notation uniformity
+%% Notation uniformity
 % Generic
 \newcommand\st{\colon}                                                %"such that"
 \newcommand\powerset{\ensuremath{\mathbb P}}                          %Power set
 \newcommand\compl[1]{\~#1}                                            %Complement
 
 % Intervals of real numbers: c for closed, o for open
-\newcommand{\icc}[2]{\ensuremath{\left[\,#1,\,#2\,\right]}}
-\newcommand{\ico}[2]{\ensuremath{\left[\,#1,\,#2\,\right[}}
-\newcommand{\ioc}[2]{\ensuremath{\left]\,#1,\,#2\,\right]}}
-\newcommand{\ioo}[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
+\newcommand\icc[2]{\ensuremath{\left[\,#1,\,#2\,\right]}}
+\newcommand\ico[2]{\ensuremath{\left[\,#1,\,#2\,\right[}}
+\newcommand\ioc[2]{\ensuremath{\left]\,#1,\,#2\,\right]}}
+\newcommand\ioo[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
 
 
-% Math delimiters
+%% Math delimiters
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
