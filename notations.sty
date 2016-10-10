@@ -1,0 +1,40 @@
+\ProvidesPackage{notations}
+
+\RequirePackage{ifthen}
+
+% Shortcuts
+% Generic
+\newcommand{\:=}{\ensuremath{\coloneqq}}
+\newcommand{\de}{\ensuremath{\,\mathrm d}}                            % For integrals
+
+% Gothics
+\newcommand\A{\ensuremath{\mathfrak A}}                               %Ring
+\newcommand\M{\ensuremath{\mathfrak M}}                               %
+\newcommand\P{\ensuremath{\mathfrak P}}                               %Semiring or pseudoring
+\newcommand\E{\ensuremath{\mathfrak E}}                               %
+
+% Standard sets
+\ifthenelse{\isundefined{\C}}{                                        %Complex numbers; ensure pdflatex-xelatex compatibility
+  \newcommand\C{\ensuremath{\mathbb C}}}{
+  \renewcommand\C{\ensuremath{\mathbb C}}}
+\newcommand\F{\ensuremath{\mathbb F}}                                 %Generic field F
+\newcommand\K{\ensuremath{\mathbb K}}                                 %Generic field K
+\newcommand\N{\ensuremath{\mathbb N}}                                 %Natural numbers
+\newcommand\Q{\ensuremath{\mathbb Q}}                                 %Rationals
+\newcommand\R{\ensuremath{\mathbb R}}                                 %Real numbers
+\newcommand\Z{\ensuremath{\mathbb Z}}                                 %Integers
+
+
+% Notation uniformity
+% Generic
+\newcommand\st{\colon}                                                %"such that"
+\newcommand\powerset{\ensuremath{\mathbb P}}                          %Power set
+\newcommand\compl[1]{\~#1}                                            %Complement
+
+% Intervals of real numbers: c for closed, o for open
+\newcommand{\icc}[2]{\ensuremath{\left[\,#1,\,#2\,\right]}}
+\newcommand{\ico}[2]{\ensuremath{\left[\,#1,\,#2\,\right[}}
+\newcommand{\ioc}[2]{\ensuremath{\left]\,#1,\,#2\,\right]}}
+\newcommand{\ioo}[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
+
+
