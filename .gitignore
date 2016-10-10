@@ -1,2 +1,20 @@
+# tex generated
+texput.log
 *.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
 *.log
+*.out
+*.run.xml
+*.tex.blg
+*.thm
+*.toc
+
+# emacs 
+*~
+auto/
+
+#system
+.directory
