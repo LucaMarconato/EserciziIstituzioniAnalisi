@@ -31,7 +31,16 @@
 Dimostrare allora che $\sigma(\E_0)=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
 \end{exercise}
 \begin{proof}
-  
+  Dimostriamo le due inclusioni.
+  \begin{itemize}
+    \item[$\subseteq$] Si può dimostrare utilizzando il principio di induzione transfinita, nella forma
+    $$P(0)\land \forall \alpha>0 \left(\forall \beta<\alpha P(\beta) \implies P(\alpha) \right) \implies \forall \alpha P(\alpha)$$
+    sulla proposizione $\sigma(\E_0)\subseteq\E_{\alpha}$. Allora $\sigma(\E_0)$ sarà contenuto in ogni $\E_{\alpha}$, e quindi anche nella loro unione.
+    \begin{itemize}
+      \item[$\alpha=0$] Vero per definizione di ($\sigma$-)anello generato.
+      \item[$\alpha>0$] Per ipotesi induttiva $\sigma(\E_0)\subseteq\E_{\beta}\, \forall \beta<\alpha$, quindi $\sigma(\E_0)\subseteq\bigcup_{\beta<\alpha}\E_{\beta}$. Ma $\sigma(\E_0)$ è chiuso per differenza e unione numerabile, quindi 
+    \end{itemize}
+  \end{itemize}
 \end{proof}
 \end{document}
 
