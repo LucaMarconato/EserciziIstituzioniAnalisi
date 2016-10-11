@@ -3,21 +3,21 @@
 
 \begin{exercise}[2016-10-10-1]
   Dimostrare che
-  \begin{equation}
-    \begin{aligned}    
+  \begin{subequations}
+    \begin{align}    
       \Bor (\R) & = \sigma \left(\left\{ \ioo{a}{b} \st a, b \in \R \right\} \right) \\
       & = \sigma \left(\left\{\ioo{a}{b} \st a, b \in \R \right\}\right) \\
       & = \sigma \left(\left\{\ioc{a}{b} \st a, b \in \Q \right\}\right) \\
       & = \sigma (\E_i)
-    \end{aligned}
-  \end{equation}
+    \end{align}
+  \end{subequations}
   dove
-  \begin{itemize}
+  \begin{enumerate}
     \item $\E_{1}\coloneqq \{\ioo{a}{+\infty} \st a \in \R\}$;
     \item $\E_{2}\coloneqq \{\ico{a}{+\infty} \st a \in \R\}$;
     \item $\E_{3}\coloneqq \{\ioo{+\infty}{a} \st a \in \R\}$;
     \item $\E_{4}\coloneqq \{\ioc{+\infty}{a} \st a \in \R\}$;
-\end{itemize}
+  \end{enumerate}
 \end{exercise}
 \begin{proof}
   
@@ -28,7 +28,7 @@
 \begin{equation}
   \E_{\alpha}\coloneqq \left\{ \bigcup_{n\in \N} \left(A_n\setminus B_n \st A_n,B_n \in \bigcup_{\beta<\alpha}\E_{\beta}\right)\right\}.
 \end{equation}
-Dimostrare allora che $\sigma(\E)_0=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
+Dimostrare allora che $\sigma(\E_0)=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
 \end{exercise}
 \begin{proof}
   
@@ -37,5 +37,5 @@ Dimostrare allora che $\sigma(\E)_0=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../main"
+%%% TeX-master: "../EserciziIstituzioniAnalisi"
 %%% End:
