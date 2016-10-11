@@ -33,13 +33,14 @@ Dimostrare allora che $\sigma(\E_0)=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
 \begin{proof}
   Dimostriamo le due inclusioni.
   \begin{itemize}
-    \item[$\subseteq$] Si può dimostrare utilizzando il principio di induzione transfinita, nella forma
+    \item[$\supseteq$] Si può dimostrare utilizzando il principio di induzione transfinita, nella forma
     $$P(0)\land \forall \alpha>0 \left(\forall \beta<\alpha P(\beta) \implies P(\alpha) \right) \implies \forall \alpha P(\alpha)$$
-    sulla proposizione $\sigma(\E_0)\subseteq\E_{\alpha}$. Allora $\sigma(\E_0)$ sarà contenuto in ogni $\E_{\alpha}$, e quindi anche nella loro unione.
+    sulla proposizione $\sigma(\E_0)\supseteq\E_{\alpha}$.
     \begin{itemize}
       \item[$\alpha=0$] Vero per definizione di ($\sigma$-)anello generato.
-      \item[$\alpha>0$] Per ipotesi induttiva $\sigma(\E_0)\subseteq\E_{\beta}\, \forall \beta<\alpha$, quindi $\sigma(\E_0)\subseteq\bigcup_{\beta<\alpha}\E_{\beta}$. Ma $\sigma(\E_0)$ è chiuso per differenza e unione numerabile, quindi 
+      \item[$\alpha>0$] Per ipotesi induttiva $\sigma(\E_0)\supseteq\E_{\beta}\, \forall \beta<\alpha$, quindi $\sigma(\E_0)\supseteq\bigcup_{\beta<\alpha}\E_{\beta}$. Ma $\sigma(\E_0)$ è chiuso per differenza e unione numerabile, quindi date due successioni $A_n, B_n \in \bigcup_{\beta<\alpha}\E_{\beta}$, abbiamo che $\forall n \in \N\, C_n=A_n\setminus B_n\in \sigma(\E_0)$, e $\bigcup_{n\in \N}C_n \in \sigma(\E_0)$. Per ipotesi un generico elemento di $\E_{\alpha}$ si scrive in questa forma, e dunque $\sigma(\E_0)\supseteq\E_{\alpha}$.
     \end{itemize}
+    Allora $\sigma(\E_0)$ contiene ogni $\E_{\alpha}$, e quindi anche la loro unione.
   \end{itemize}
 \end{proof}
 \end{document}
