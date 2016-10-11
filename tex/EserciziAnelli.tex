@@ -41,6 +41,11 @@ Dimostrare allora che $\sigma(\E_0)=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
       \item[$\alpha>0$] Per ipotesi induttiva $\sigma(\E_0)\supseteq\E_{\beta}\, \forall \beta<\alpha$, quindi $\sigma(\E_0)\supseteq\bigcup_{\beta<\alpha}\E_{\beta}$. Ma $\sigma(\E_0)$ è chiuso per differenza e unione numerabile, quindi date due successioni $A_n, B_n \in \bigcup_{\beta<\alpha}\E_{\beta}$, abbiamo che $\forall n \in \N\, C_n=A_n\setminus B_n\in \sigma(\E_0)$, e $\bigcup_{n\in \N}C_n \in \sigma(\E_0)$. Per ipotesi un generico elemento di $\E_{\alpha}$ si scrive in questa forma, e dunque $\sigma(\E_0)\supseteq\E_{\alpha}$.
     \end{itemize}
     Allora $\sigma(\E_0)$ contiene ogni $\E_{\alpha}$, e quindi anche la loro unione.
+    \item[$\subseteq$] Basta dimostrare che $S\coloneqq\bigcup_{\alpha<\omega_1}\E_{\alpha}$ è un anello.
+    \begin{itemize}
+      \item[Differenza] Siano $A,B\in S$; allora $\exists \alpha_1, \alpha_2<\omega_1 \st A\in \E_{\alpha_1}, B\in \E_{\alpha_2}$, e sia $\alpha=\min\{\alpha_1, \alpha_2\}$. allora per ipotesi $A\B\in\E_{\alpha+1}$, con $\alpha+1<\omega_1$, perché $\omega_1$ non è un successore.      
+      \item[Unione] Sia $(A_n)_{n\in\N}$ una successione si elementi di $S$ 
+    \end{itemize}
   \end{itemize}
 \end{proof}
 \end{document}
