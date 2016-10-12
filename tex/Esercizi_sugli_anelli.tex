@@ -44,9 +44,10 @@ Dimostrare allora che $\sigma(\E_0)=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
     \item[$\subseteq$] Basta dimostrare che $S\coloneqq\bigcup_{\alpha<\omega_1}\E_{\alpha}$ è un anello.
     \begin{itemize}
       \item[Differenza] Siano $A,B\in S$; allora $\exists \alpha_1, \alpha_2<\omega_1 \st A\in \E_{\alpha_1}, B\in \E_{\alpha_2}$, e sia $\alpha=\min\{\alpha_1, \alpha_2\}$. allora per ipotesi $A\setminus B\in\E_{\alpha+1}$, con $\alpha+1<\omega_1$, perché $\omega_1$ non è un successore.      
-      \item[Unione] Sia $(A_n)_{n\in\N}$ una successione si elementi di $S$ 
+      \item[Unione] Sia $(A_n)_{n\in\N}$ una successione si elementi di $S$, $B_n=\emptyset \, \forall n \in \N$, e sia $\alpha_n$ il più piccolo ordinale per cui $A_n\in \E_{\alpha_n}$. Dato che $\cof(\omega_1)>\aleph_0\ \alpha=\bigcup_{n \in \N}\alpha_n<\omega_1$, e dunque per ipotesi $\bigcup_{n \in \N} A_n\in \E_{\alpha}\subseteq S$
     \end{itemize}
   \end{itemize}
+  Abbiamo anche dimostrato che da $\lambda=\omega_1$ in poi la successione $\bigcup_{\alpha<\lambda}\E_{\alpha}$ è stazionaria.
 \end{proof}
 \end{document}
 
