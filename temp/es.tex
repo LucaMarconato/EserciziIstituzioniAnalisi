@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article} %potrebbe servire fleqn per l'allineamento a sinistra con multline
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\newif\ifdraft
+%\draftfalse % <-------- draftfalse = VERSIOyE DRAFT
+\drafttrue % <-------- drafttrue = VERSIOyE FIyALE
+\ifdraft
+\usepackage{graphicx}
+\else
+\usepackage[draft]{graphicx}
+\fi
+
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{pifont}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+%\usepackage[top=1.0in, bottom=1.0in, left=0.5in, right=0.5in]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[italian]{babel}
+\usepackage[pages=some]{background} %per il polloPallido in background
+\ifdraft
+\else
+\usepackage[right]{showlabels}
+\fi
+%\usepackage[lite]{mtpro2} %for widetilde
+%\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,a4paper]{geometry} %per \newgeometry
+%\usepackage[left=2.5cm,right=2.5cm,top=1.5cm,bottom=2cm,a4paper]{geometry} %per \newgeometry
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots} %per fare plot con tikz
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,calc}
+\usepackage{makeidx}                       % Indice analitico
+
+%\usepackage{natbib} %per \bibliographystyle{apa}
+\makeindex
+
+%frontespizio
+\usepackage[]{microtype}
+\usepackage{titling}
+\DeclareRobustCommand{\univsc}[1]{\Large\textsc{\textls[75]{#1}}}
+\DeclareRobustCommand{\titlesc}[1]{\linespread{1.2}\LARGE{\textls[35]{\uppercase{#1}}\linespread{1}}}
+\DeclareRobustCommand{\namesc}[1]{\large\textsc{\textls[35]{#1}}} 
+
+
+
+
+%% Environment
+\theoremstyle{plain}
+\newtheorem{exercise}{Exercise}
+
+
+
+
+
+
+
+%% Shortcuts
+% Generic
+\newcommand\de{\ensuremath{\,\mathrm d}}                              %For integrals
+
+% Gothics
+\newcommand\A{\ensuremath{\mathfrak A}}                               %Ring
+\newcommand\E{\ensuremath{\mathfrak E}}                               %
+\newcommand\M{\ensuremath{\mathfrak M}}                               %
+\renewcommand\P{\ensuremath{\mathfrak P}}                             %Semiring or pseudoring
+
+% Standard sets
+
+
+
+\newcommand\F{\ensuremath{\mathbb F}}                                 %Generic field F
+\newcommand\K{\ensuremath{\mathbb K}}                                 %Generic field K
+\newcommand\N{\ensuremath{\mathbb N}}                                 %Natural numbers
+\newcommand\Q{\ensuremath{\mathbb Q}}                                 %Rationals
+\newcommand\R{\ensuremath{\mathbb R}}                                 %Real numbers
+\newcommand\Z{\ensuremath{\mathbb Z}}                                 %Integers
+
+
+%% Notation uniformity
+% Generic
+\newcommand\st{\colon}                                                %"such that"
+\newcommand\powerset{\ensuremath{\mathbb P}}                          %Power set
+\newcommand\compl[1]{\~#1}                                            %Complement
+
+% Intervals of real numbers: c for closed, o for open
+\newcommand\icc[2]{\ensuremath{\left[\,#1,\,#2\,\right]}}
+\newcommand\ico[2]{\ensuremath{\left[\,#1,\,#2\,\right[}}
+\newcommand\ioc[2]{\ensuremath{\left]\,#1,\,#2\,\right]}}
+\newcommand\ioo[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
+
+\title{Lavoro domestico}
+\author{Luca Marconato}
+
+\begin{document}
+\maketitle
+\begin{exercise}
+  Let us show that
+  \begin{subequations}
+    \begin{align}    
+      \mathcal{B} (\mathbb{R}) & = \sigma \left(\left\{ \ioo{a}{b} \st a, b \in \mathbb{R} \right\} \right) = \sigma \left(\left\{\icc{a}{b} \st a, b \in \mathbb{R} \right\}\right) \\
+      & = \sigma \left(\left\{\ioc{a}{b} \st a, b \in \Q \right\}\right) = \sigma (\E_i)
+    \end{align}
+  \end{subequations}
+  where
+  \begin{enumerate}
+    \item $\E_{1}\coloneqq \{\ioo{a}{+\infty} \st a \in \mathbb{R}\}$;
+    \item $\E_{2}\coloneqq \{\ico{a}{+\infty} \st a \in \mathbb{R}\}$;
+    \item $\E_{3}\coloneqq \{\ioo{+\infty}{a} \st a \in \mathbb{R}\}$;
+    \item $\E_{4}\coloneqq \{\ioc{+\infty}{a} \st a \in \mathbb{R}\}$;
+  \end{enumerate}
+\end{exercise}
+\begin{proof}
+  Let us call $\sigma({\A_1}), \sigma({\A_2}), \sigma({\A_3})$ the three $\sigma$-ring that appear in the statement of this exercise that still do not have a name.
+  First, let us observe that the various $\sigma$ rings we deal with are not only $\sigma$-rings but also $\sigma$-algebras.
+  In fact for each of them $\R$ can be written as a countable union of its elements.
+  Since the set of all open intervals is a subset of the family of the open sets, considering the generated $\sigma$-rings, we obtain that $\A_1 \subseteq \mathcal{B}(\R)$. 
+  The other inclusion follows from the fact that an open set is by definition a numerable union of open intervals.
+  $\A_1 = \A_2$ because every open interval can be written as the complementary of a closed set and vice versa.
+  Let us now prove that $\A_2 = \A_3$.
+  The key point is to notice that every $[a,b]$ can be written as the countable intersection $\bigcap \left\lbrace \ioc{a-\frac{1}{n}}{b}\right\rbrace$, that every $\ioc{a}{b}$ can be written as the countable union $\bigcup \left\lbrace \icc{a+\frac{1}{n}}{b}\right\rbrace$, and to remember that a $\sigma$-algebra contains all the countable unions and countable intersections.
+
+  Clearly $\E_1 = \E_4$ and $\E_2 = \E_3$, because every element of each first set can it is the complementary of an element of each second set, and vice versa.
+  The inclusion $\E_1 \subseteq \A_1$ follows by the fact that $\ioo{a}{+\infty}$ can be written as $\ioo{a}{a + 2} \cup \bigcup \ioo{a+n}{a+n+2}$. 
+  Also the other inclusion is true because $\ioo{a}{b} = \ioo{a}{+\infty} \cap \bigcup \widetilde{\ioo{b-\frac{1}{n}}{+\infty}}$.
+
+It remains to prove that $\E_1 = \E_2$. 
+This can be done observing that $\ioo{a}{+\infty} = \bigcup \ico{a+\frac{1}{n}}{+\infty}$ and that $\ico{a}{+\infty} = \bigcap \ioo{a-\frac{1}{n}}{+\infty}$.
+\end{proof}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
