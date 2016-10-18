@@ -9,7 +9,8 @@ all: $(SOURCE).tex $(LIST) $(wildcard tex/*)
 
 $(LIST): tex/
 	-$(RM) $(LIST)
-	for i in `ls tex/`; do j=`echo $(dollar)i|sed 's/_/ /g'|sed 's/.tex//'`; echo "\section{$(dollar)j} \subfile{tex/$(dollar)i}">>$(LIST); done
+	for i in `ls tex/`; do j=`echo $$i|sed 's/_/ /g'|sed 's/.tex//'`; echo "\section{$$j} \subfile{tex/$$i}">>$(LIST); done
+
 
 clean:
 	-$(RM) texput.log
@@ -24,3 +25,4 @@ clean:
 	-$(RM) $(SOURCE).aux
 	-$(RM) $(SOURCE).bcf
 	-$(RM) $(SOURCE).log
+
