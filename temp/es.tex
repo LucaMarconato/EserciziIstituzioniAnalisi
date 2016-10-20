@@ -20,7 +20,7 @@
 %\usepackage[top=1.0in, bottom=1.0in, left=0.5in, right=0.5in]{geometry}
 \usepackage{xcolor}
 \usepackage{titlesec}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage[pages=some]{background} %per il polloPallido in background
 \ifdraft
 \else
@@ -92,11 +92,41 @@
 \newcommand\ioc[2]{\ensuremath{\left]\,#1,\,#2\,\right]}}
 \newcommand\ioo[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
 
+
+\newtheorem{lemma}[exercise]{Lemma}
+
 \title{Lavoro domestico}
 \author{Luca Marconato}
 
 \begin{document}
 \maketitle
+We start with a lemma.
+\begin{lemma}
+  Every open set $A \subseteq \mathbb{R}$ can be written as a countable union of open intervals.
+\end{lemma}
+\begin{proof}
+  First, we remind what a \textit{base for a topology} is.
+  Let $(X,\tau)$ be a topological space. 
+  A base for $\tau$ is a set $\mathcal{A} \subseteq \tau$ such that
+  \begin{equation*}
+    \forall T \in \tau \ \forall x \in T \ \exists A(x,T) \in \mathcal{A}\ x \in A \subseteq T.
+  \end{equation*}
+  If $T \in \tau$, using the notation of the previous definition, then we have that
+  \begin{equation*}
+    T = \bigcup_{x \in T} A(x,T).
+  \end{equation*}
+  In other words a base for $\tau$ is a subset $\mathcal{A}$ of $\tau$ such that every set of $\tau$ can be written as an union of elements in $\mathcal{A}$.
+
+  Now, given any open set $T$ of $\mathbb{R}$ and given $x \in \mathbb{R}$ by definition exists an open interval contained in $T$ and containing $x$.
+  It is easy to find an open interval with rational endpoints which contains $x$ and which is contained in $T$.
+  This shows that the set
+  \begin{equation*}
+    \left\lbrace \ioo{a}{b}\colon a, b \in \mathbb{Q} \right\rbrace
+  \end{equation*}
+  is a base of the Euclidean topology.
+  Since the base is countable, this proves that every open set of $\mathbb{R}$ can be written as a countable union of open intervals.
+\end{proof}
+
 \begin{exercise}
   Let us show that
   \begin{subequations}
@@ -117,19 +147,59 @@
   Let us call $\sigma({\A_1}), \sigma({\A_2}), \sigma({\A_3})$ the three $\sigma$-ring that appear in the statement of this exercise that still do not have a name.
   First, let us observe that the various $\sigma$ rings we deal with are not only $\sigma$-rings but also $\sigma$-algebras.
   In fact for each of them $\R$ can be written as a countable union of its elements.
-  Since the set of all open intervals is a subset of the family of the open sets, considering the generated $\sigma$-rings, we obtain that $\A_1 \subseteq \mathcal{B}(\R)$. 
-  The other inclusion follows from the fact that an open set is by definition a numerable union of open intervals.
-  $\A_1 = \A_2$ because every open interval can be written as the complementary of a closed set and vice versa.
-  Let us now prove that $\A_2 = \A_3$.
+
+  In order to prove the various equalities $\sigma(\mathfrak{M}) = \sigma(\mathfrak{N})$ we will first prove that $\mathfrak{M} \subseteq \mathfrak{N}$, thus obtaining $\sigma(\mathfrak{M}) \subseteq \sigma(\mathfrak{N})$ and the then we will prove that $\mathfrak{N} \subseteq \sigma(\mathfrak{M})$ concluding the proof.
+
+  Since the set of all open intervals is a subset of the family of the open sets, considering the generated $\sigma$-rings, we obtain that $\sigma(\A_1) \subseteq \mathcal{B}(\R)$. 
+  The other inclusion follows from the lemma we have seen before this exercise, which states that every open set can be written as a numerable union of open intervals.
+  $\sigma(\A_1) = \sigma(\A_2)$ because every open interval can be written as the complementary of a closed set and vice versa.
+  Let us now prove that $\sigma(\A_2) = \sigma(\A_3)$.
   The key point is to notice that every $[a,b]$ can be written as the countable intersection $\bigcap \left\lbrace \ioc{a-\frac{1}{n}}{b}\right\rbrace$, that every $\ioc{a}{b}$ can be written as the countable union $\bigcup \left\lbrace \icc{a+\frac{1}{n}}{b}\right\rbrace$, and to remember that a $\sigma$-algebra contains all the countable unions and countable intersections.
 
-  Clearly $\E_1 = \E_4$ and $\E_2 = \E_3$, because every element of each first set can it is the complementary of an element of each second set, and vice versa.
-  The inclusion $\E_1 \subseteq \A_1$ follows by the fact that $\ioo{a}{+\infty}$ can be written as $\ioo{a}{a + 2} \cup \bigcup \ioo{a+n}{a+n+2}$. 
+  Clearly $\sigma(\E_1) = \sigma(\E_4)$ and $\sigma(\E_2) = \sigma(\E_3)$, because every element of each first set is the complementary of an element of each second set, and vice versa.
+  The inclusion $\sigma(\E_1) \subseteq \sigma(\A_1)$ follows by the fact that $\ioo{a}{+\infty}$ can be written as $\ioo{a}{a + 2} \cup \bigcup \ioo{a+n}{a+n+2}$. 
   Also the other inclusion is true because $\ioo{a}{b} = \ioo{a}{+\infty} \cap \bigcup \widetilde{\ioo{b-\frac{1}{n}}{+\infty}}$.
 
-It remains to prove that $\E_1 = \E_2$. 
+It remains to prove that $\sigma(\E_1) = \sigma(\E_2)$. 
 This can be done observing that $\ioo{a}{+\infty} = \bigcup \ico{a+\frac{1}{n}}{+\infty}$ and that $\ico{a}{+\infty} = \bigcap \ioo{a-\frac{1}{n}}{+\infty}$.
+
+
+
+The exercise is completed.
 \end{proof}
+
+\begin{exercise}
+  Let us show that
+  \begin{equation*}
+    \mathfrak{S} \coloneqq \left\lbrace B \cup A \colon B \in \mathcal{B}(\mathbb{R}),\ A \subseteq \left\lbrace -\infty, +\infty\right\rbrace\right\rbrace
+  \end{equation*}
+  coincides with the set
+  \begin{equation*}
+    \sigma(\mathfrak{B}) \coloneqq \sigma\left(\left\lbrace[a,+\infty] : a \in \mathbb{R}\right\rbrace \cup \left\lbrace[-\infty,+\infty]\right\rbrace\right).
+  \end{equation*}
+\end{exercise}
+\begin{proof}
+  The inclusion $(\supseteq)$ easily follows from the fact that every set in $\mathfrak{B}$ belongs, by definition, also to $\mathfrak{S}$.
+  In order to prove the other inclusion we will first prove that $\mathcal{B} \subseteq \sigma(\mathfrak{B})$, and the we will prove the same for $\left\lbrace -\infty, +\infty\right\rbrace$.
+  From the previous exercise, if we prove that $\mathfrak{E_2} \subseteq \sigma(\mathfrak{B})$, since $\mathcal{B} = \sigma(\mathfrak{E_2})$, we obtain that $\mathcal{B} \subseteq \sigma(\mathfrak{B})$.
+  It is sufficient to prove that $\left\lbrace +\infty\right\rbrace \in \mathfrak{B}$ since we know that
+  \begin{equation*}
+    \left\lbrace \ico{a}{+\infty} \cup \left\lbrace +\infty\right\rbrace \colon a \in \mathbb{R}\right\rbrace \subseteq \mathfrak{B}.
+  \end{equation*}
+  For this purpose let us write
+  \begin{equation*}
+    \left\lbrace+\infty\right\rbrace = \bigcap_{n \in \mathbb{N}}[n,+\infty].
+  \end{equation*}
+
+  It remains to prove that $\left\lbrace -\infty\right\rbrace \in \mathfrak{B}$.
+  This is proved by the following:
+  \begin{equation*}
+    \left\lbrace-\infty\right\rbrace = [-\infty,+\infty] \setminus \bigcup_{n \in \mathbb{N}}\icc{a}{+\infty},
+  \end{equation*}
+  which is the difference of an element of $\mathfrak{B}$ and a countable union of elements of $\mathfrak{B}$.
+  This completes the proof.
+\end{proof}
+
 
 \end{document}
 %%% Local Variables:
