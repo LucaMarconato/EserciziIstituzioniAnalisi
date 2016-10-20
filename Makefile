@@ -2,7 +2,6 @@ SOURCE=EserciziIstituzioniAnalisi
 LIST=list.tex
 compilecmd=pdflatex
 SHELL := /bin/bash
-dollar=$
 
 all: $(SOURCE).tex $(LIST) $(wildcard tex/*)
 	@$(compilecmd) $(SOURCE).tex
