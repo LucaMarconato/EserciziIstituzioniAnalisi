@@ -13,33 +13,11 @@
 \DeclareMathOperator\cof{Cof}
 
 
-%% Shortcuts
-% Generic
-\newcommand\de{\ensuremath{\,\mathrm d}}                              %For integrals
-
-% Gothics
-\newcommand\A{\ensuremath{\mathfrak A}}                               %Ring
-\newcommand\E{\ensuremath{\mathfrak E}}                               %
-\newcommand\M{\ensuremath{\mathfrak M}}                               %
-\renewcommand\P{\ensuremath{\mathfrak P}}                             %Semiring or pseudoring
-
-% Standard sets
-\ifthenelse{\isundefined{\C}}{                                        %Complex numbers; ensure pdflatex-xelatex compatibility
-  \newcommand\C{\ensuremath{\mathbb C}}}{
-  \renewcommand\C{\ensuremath{\mathbb C}}}
-\newcommand\F{\ensuremath{\mathbb F}}                                 %Generic field F
-\newcommand\K{\ensuremath{\mathbb K}}                                 %Generic field K
-\newcommand\N{\ensuremath{\mathbb N}}                                 %Natural numbers
-\newcommand\Q{\ensuremath{\mathbb Q}}                                 %Rationals
-\newcommand\R{\ensuremath{\mathbb R}}                                 %Real numbers
-\newcommand\Z{\ensuremath{\mathbb Z}}                                 %Integers
-
-
 %% Notation uniformity
 % Generic
-\newcommand\st{\colon}                                                %"such that"
-\newcommand\powerset{\ensuremath{\mathbb P}}                          %Power set
-\newcommand\compl[1]{\~#1}                                            %Complement
+\newcommand\st{\colon}                                                  %"such that"
+\newcommand\powerset{\ensuremath{\mathbb P}}                            %Power set
+\newcommand\compl[1]{\~#1}                                              %Complement
 
 % Intervals of real numbers: c for closed, o for open
 \newcommand\icc[2]{\ensuremath{\left[\,#1,\,#2\,\right]}}
@@ -51,3 +29,32 @@
 %% Math delimiters
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+
+%% Shortcuts
+% Generic
+\newcommand\de{\ensuremath{\,\mathrm d}}                                %For integrals
+\newcommand\PS{\powerset}                                               %\powerset defined above
+
+% Gothics
+\newcommand\gA{\ensuremath{\mathfrak A}}                                %Ring
+\newcommand\gE{\ensuremath{\mathfrak E}}                                %
+\newcommand\gM{\ensuremath{\mathfrak M}}                                %
+\newcommand\gN{\ensuremath{\mathfrak N}}                                %Ideal; measure ker
+\newcommand\gP{\ensuremath{\mathfrak P}}                                %Semiring or pseudoring
+
+% Standard sets                                                         
+\ifthenelse{\isundefined{\C}}{                                          %Complex numbers; ensure pdflatex-xelatex compatibility
+  \newcommand\C{\ensuremath{\mathbb C}}}{
+  \renewcommand\C{\ensuremath{\mathbb C}}}
+\newcommand\F{\ensuremath{\mathbb F}}                                   %Generic field F
+\newcommand\K{\ensuremath{\mathbb K}}                                   %Generic field K
+\newcommand\N{\ensuremath{\mathbb N}}                                   %Natural numbers
+\newcommand\Q{\ensuremath{\mathbb Q}}                                   %Rationals
+\newcommand\R{\ensuremath{\mathbb R}}                                   %Real numbers
+\newcommand\Z{\ensuremath{\mathbb Z}}                                   %Integers
+
+% (Extended) real numbers subsets
+\newcommand\Rpinf{\ensuremath{\icc{0}{+\infty}}}
+\newcommand\Rext{\ensuremath{\icc{-\infty}{+\infty}}}
+\newcommand\Rp{\ensuremath{\ico{0}{+\infty}}}

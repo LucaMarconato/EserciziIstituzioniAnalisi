@@ -8,48 +8,48 @@
       \Bor (\R) & = \sigma \left(\left\{ \ioo{a}{b} \st a, b \in \R \right\} \right) \\
       & = \sigma \left(\left\{\icc{a}{b} \st a, b \in \R \right\}\right) \\
       & = \sigma \left(\left\{\ioc{a}{b} \st a, b \in \Q \right\}\right) \\
-      & = \sigma (\E_i)
+      & = \sigma (\gE_i)
     \end{align}
   \end{subequations}
   dove
   \begin{enumerate}
-    \item $\E_{1}\coloneqq \{\ioo{a}{+\infty} \st a \in \R\}$;
-    \item $\E_{2}\coloneqq \{\ico{a}{+\infty} \st a \in \R\}$;
-    \item $\E_{3}\coloneqq \{\ioo{+\infty}{a} \st a \in \R\}$;
-    \item $\E_{4}\coloneqq \{\ioc{+\infty}{a} \st a \in \R\}$;
+    \item $\gE_{1}\coloneqq \{\ioo{a}{+\infty} \st a \in \R\}$;
+    \item $\gE_{2}\coloneqq \{\ico{a}{+\infty} \st a \in \R\}$;
+    \item $\gE_{3}\coloneqq \{\ioo{+\infty}{a} \st a \in \R\}$;
+    \item $\gE_{4}\coloneqq \{\ioc{+\infty}{a} \st a \in \R\}$;
   \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Denotiamo rispettivamente con $\A_1, \A_2, \A_3$ le tre famiglie di insiemi ancora senza nome che compaiono nell'enunciato.
-  Dato che l'insieme degli intervalli aperti è un sottoinsieme dell'insieme degli aperti di $\R$, passando alle $\sigma$-algebre generate otteniamo $\A_1 \subseteq \Bor (\R)$.
-  Notiamo ora che $\A_1 = \A_2$, infatti $\A_1$ contiene 
+  Denotiamo rispettivamente con $\gA_1, \gA_2, \gA_3$ le tre famiglie di insiemi ancora senza nome che compaiono nell'enunciato.
+  Dato che l'insieme degli intervalli aperti è un sottoinsieme dell'insieme degli aperti di $\R$, passando alle $\sigma$-algebre generate otteniamo $\gA_1 \subseteq \Bor (\R)$.
+  Notiamo ora che $\gA_1 = \gA_2$, infatti $\gA_1$ contiene 
 \end{proof}
 
 \begin{exercise}[insert date]  
-  Sia $\emptyset \neq \E_0 \subseteq \powerset(X)$ e per $\alpha \in \Ord$ sia 
+  Sia $\emptyset \neq \gE_0 \subseteq \powerset(X)$ e per $\alpha \in \Ord$ sia 
 \begin{equation}
-  \E_{\alpha}\coloneqq \left\{ \bigcup_{n\in \N} \left(A_n\setminus B_n \st A_n,B_n \in \bigcup_{\beta<\alpha}\E_{\beta}\right)\right\}.
+  \gE_{\alpha}\coloneqq \left\{ \bigcup_{n\in \N} \left(A_n\setminus B_n \st A_n,B_n \in \bigcup_{\beta<\alpha}\gE_{\beta}\right)\right\}.
 \end{equation}
-Dimostrare allora che $\sigma(\E_0)=\bigcup_{\alpha<\omega_1}\E_{\alpha}$.
+Dimostrare allora che $\sigma(\gE_0)=\bigcup_{\alpha<\omega_1}\gE_{\alpha}$.
 \end{exercise}
 \begin{proof}
   Dimostriamo le due inclusioni.
   \begin{itemize}
     \item[$\supseteq$] Si può dimostrare utilizzando il principio di induzione transfinita, nella forma
     $$P(0)\land \forall \alpha>0 \left(\forall \beta<\alpha P(\beta) \implies P(\alpha) \right) \implies \forall \alpha P(\alpha)$$
-    sulla proposizione $\sigma(\E_0)\supseteq\E_{\alpha}$.
+    sulla proposizione $\sigma(\gE_0)\supseteq\gE_{\alpha}$.
     \begin{itemize}
       \item[$\alpha=0$] Vero per definizione di ($\sigma$-)anello generato.
-      \item[$\alpha>0$] Per ipotesi induttiva $\sigma(\E_0)\supseteq\E_{\beta}\, \forall \beta<\alpha$, quindi $\sigma(\E_0)\supseteq\bigcup_{\beta<\alpha}\E_{\beta}$. Ma $\sigma(\E_0)$ è chiuso per differenza e unione numerabile, quindi date due successioni $A_n, B_n \in \bigcup_{\beta<\alpha}\E_{\beta}$, abbiamo che $\forall n \in \N\, C_n=A_n\setminus B_n\in \sigma(\E_0)$, e $\bigcup_{n\in \N}C_n \in \sigma(\E_0)$. Per ipotesi un generico elemento di $\E_{\alpha}$ si scrive in questa forma, e dunque $\sigma(\E_0)\supseteq\E_{\alpha}$.
+      \item[$\alpha>0$] Per ipotesi induttiva $\sigma(\gE_0)\supseteq\gE_{\beta}\, \forall \beta<\alpha$, quindi $\sigma(\gE_0)\supseteq\bigcup_{\beta<\alpha}\gE_{\beta}$. Ma $\sigma(\gE_0)$ è chiuso per differenza e unione numerabile, quindi date due successioni $A_n, B_n \in \bigcup_{\beta<\alpha}\gE_{\beta}$, abbiamo che $\forall n \in \N\, C_n=A_n\setminus B_n\in \sigma(\gE_0)$, e $\bigcup_{n\in \N}C_n \in \sigma(\gE_0)$. Per ipotesi un generico elemento di $\gE_{\alpha}$ si scrive in questa forma, e dunque $\sigma(\gE_0)\supseteq\gE_{\alpha}$.
     \end{itemize}
-    Allora $\sigma(\E_0)$ contiene ogni $\E_{\alpha}$, e quindi anche la loro unione.
-    \item[$\subseteq$] Basta dimostrare che $S\coloneqq\bigcup_{\alpha<\omega_1}\E_{\alpha}$ è un anello.
+    Allora $\sigma(\gE_0)$ contiene ogni $\gE_{\alpha}$, e quindi anche la loro unione.
+    \item[$\subseteq$] Basta dimostrare che $S\coloneqq\bigcup_{\alpha<\omega_1}\gE_{\alpha}$ è un anello.
     \begin{itemize}
-      \item[Differenza] Siano $A,B\in S$; allora $\exists \alpha_1, \alpha_2<\omega_1 \st A\in \E_{\alpha_1}, B\in \E_{\alpha_2}$, e sia $\alpha=\min\{\alpha_1, \alpha_2\}$. allora per ipotesi $A\setminus B\in\E_{\alpha+1}$, con $\alpha+1<\omega_1$, perché $\omega_1$ non è un successore.      
-      \item[Unione] Sia $(A_n)_{n\in\N}$ una successione si elementi di $S$, $B_n=\emptyset \, \forall n \in \N$, e sia $\alpha_n$ il più piccolo ordinale per cui $A_n\in \E_{\alpha_n}$. Dato che $\cof(\omega_1)>\aleph_0\ \alpha=\bigcup_{n \in \N}\alpha_n<\omega_1$, e dunque per ipotesi $\bigcup_{n \in \N} A_n\in \E_{\alpha}\subseteq S$
+      \item[Differenza] Siano $A,B\in S$; allora $\exists \alpha_1, \alpha_2<\omega_1 \st A\in \gE_{\alpha_1}, B\in \gE_{\alpha_2}$, e sia $\alpha=\min\{\alpha_1, \alpha_2\}$. allora per ipotesi $A\setminus B\in\gE_{\alpha+1}$, con $\alpha+1<\omega_1$, perché $\omega_1$ non è un successore.      
+      \item[Unione] Sia $(A_n)_{n\in\N}$ una successione si elementi di $S$, $B_n=\emptyset \, \forall n \in \N$, e sia $\alpha_n$ il più piccolo ordinale per cui $A_n\in \gE_{\alpha_n}$. Dato che $\cof(\omega_1)>\aleph_0\ \alpha=\bigcup_{n \in \N}\alpha_n<\omega_1$, e dunque per ipotesi $\bigcup_{n \in \N} A_n\in \gE_{\alpha}\subseteq S$
     \end{itemize}
   \end{itemize}
-  Abbiamo anche dimostrato che da $\lambda=\omega_1$ in poi la successione $\bigcup_{\alpha<\lambda}\E_{\alpha}$ è stazionaria.
+  Abbiamo anche dimostrato che da $\lambda=\omega_1$ in poi la successione $\bigcup_{\alpha<\lambda}\gE_{\alpha}$ è stazionaria.
 \end{proof}
 \end{document}
 
