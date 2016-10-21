@@ -16,6 +16,7 @@ texput.log
 # emacs 
 *~
 auto/
+\#*
 
 #system
 .directory
