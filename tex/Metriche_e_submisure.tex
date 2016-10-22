@@ -15,11 +15,36 @@
 \begin{exercise}[2016-10-20-2]
   Sia $\gA\subseteq\PS(X)$ un $\sigma$-anello, $\mu\colon \gA\to\Rpinf$ una misura $\sigma$-additiva.
   Sia $\gN\coloneqq\left\{N\st\exists A\in \gA, N\subseteq A, A\in \gN(\mu)\right\}$.
-  
-  Dimostrare che $\gN$ è un ideale in $\PS(X)$.
+
+  \begin{enumerate}
+    \item Dimostrare che $\gN$ è un ideale in $\PS(X)$.
+    \item Sia $\gL\coloneqq\ring(\gA\cup\gN)$. Dimostare che $\gL=\left\{A\Delta N\st A\in\gA,N\in\gN\right\}=\left\{A\sqcup N\st A\in\gA,N\in\gN\right\}$ 
+  \end{enumerate}
 \end{exercise}
 \begin{proof}
-  
+  \begin{enumerate}
+    \item Sia $\hat N\subseteq N \in \gN$; per ipotesi $\exists A\in \gA \st N \subseteq A,\, \mu(A)=0$, ma allora anche $\hat N \subseteq A$, e quindi $\hat N \in \gN$.
+
+    Consideriamo allora per $n \in \N\, N_n \in \gN$; per ipotesi $\forall n \exists A_n\in \gA \st \mu(A_n)=0,\, N_n\in A_n$; allora $\bigcup_{n \in \N} N_n\subseteq \bigcup_{n \in \N} A_n$ e per la $\sigma$-additività di $\mu$, $\mu(\bigcup_{n \in \N} A_n)\leq \sum_{n\in\N}\mu(A_n)=0$ e quindi per definizione $\bigcup_{n \in \N} N_n\in \gN$.
+    \item Poniamo
+    \begin{equation*}
+      \begin{aligned}
+        \mathfrak{U}\coloneqq \left\{A\Delta N\st A\in\gA,N\in\gN\right\}\\
+        \mathfrak{T}\coloneqq \left\{A\sqcup N\st A\in\gA,N\in\gN\right\}
+      \end{aligned}
+    \end{equation*}
+    Mostriamo che $\mathfrak{U}=\mathfrak{T}$
+    Siano $A\in\gA,N\in\gN$.
+    \begin{itemize}
+      \item[$\subseteq$] Abbiamo che $A\Delta N=(A\setminus N)\sqcup (N\setminus A)$. Per ipotesi $\exists B\in\gA$ di misura nulla (e quindi $B\in\gN$) tale che $N\subseteq B$, e $A\setminus N=(A\setminus B)\sqcup (B\setminus N)$. Allora $A\Delta N=(A\setminus B)\sqcup (B\setminus N)\sqcup (N\setminus A)$, dove $A\setminus B\in \gA$ e $(B\setminus N)\sqcup (N\setminus A)\in \gN$, e dunque $A\Delta N\in \mathfrak{T}$.
+      \item[$\supseteq$] Sia inoltre $A\cap N=\emptyset$. Allora $A\sqcup N=A\Delta N$ e la tesi è provata.
+    \end{itemize}
+    Mostriamo ora $\mathfrak{U}=\gL$.
+    \begin{itemize}
+      \item[$\supseteq$] È vero perché per definizione ogni anello è chiuso per differenza simmetrica.
+      \item[$\subseteq$] Basta mostrare che $\mathfrak{U}$ è un anello e che contiene 
+    \end{itemize}
+  \end{enumerate}
 \end{proof}
 \end{document}
 

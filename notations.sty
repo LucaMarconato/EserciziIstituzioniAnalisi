@@ -8,10 +8,10 @@
 \newtheorem{exercise}{Esercizio}
 
 %% Mathrm
-\DeclareMathOperator\Bor{Bor}
-\DeclareMathOperator\Ord{Ord}
-\DeclareMathOperator\cof{Cof}
-
+\DeclareMathOperator\Bor{Bor}                                           %Borel sets
+\DeclareMathOperator\Ord{Ord}                                           %Ordinals
+\DeclareMathOperator\cof{Cof}                                           %Cofinality
+\DeclareMathOperator\ring{anello}                                       %generated ring
 
 %% Notation uniformity
 % Generic
@@ -25,6 +25,10 @@
 \newcommand\ioc[2]{\ensuremath{\left]\,#1,\,#2\,\right]}}
 \newcommand\ioo[2]{\ensuremath{\left]\,#1,\,#2\,\right[}}
 
+% (Extended) real numbers subsets
+\newcommand\Rpinf{\ensuremath{\icc{0}{+\infty}}}
+\newcommand\Rext{\ensuremath{\icc{-\infty}{+\infty}}}
+\newcommand\Rp{\ensuremath{\ico{0}{+\infty}}}
 
 %% Math delimiters
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
@@ -38,7 +42,8 @@
 
 % Gothics
 \newcommand\gA{\ensuremath{\mathfrak A}}                                %Ring
-\newcommand\gE{\ensuremath{\mathfrak E}}                                %
+\newcommand\gE{\ensuremath{\mathfrak E}}                                %Generic sets family
+\newcommand\gL{\ensuremath{\mathfrak L}}                                % 
 \newcommand\gM{\ensuremath{\mathfrak M}}                                %
 \newcommand\gN{\ensuremath{\mathfrak N}}                                %Ideal; measure ker
 \newcommand\gP{\ensuremath{\mathfrak P}}                                %Semiring or pseudoring
@@ -53,8 +58,3 @@
 \newcommand\Q{\ensuremath{\mathbb Q}}                                   %Rationals
 \newcommand\R{\ensuremath{\mathbb R}}                                   %Real numbers
 \newcommand\Z{\ensuremath{\mathbb Z}}                                   %Integers
-
-% (Extended) real numbers subsets
-\newcommand\Rpinf{\ensuremath{\icc{0}{+\infty}}}
-\newcommand\Rext{\ensuremath{\icc{-\infty}{+\infty}}}
-\newcommand\Rp{\ensuremath{\ico{0}{+\infty}}}
