@@ -18,7 +18,7 @@
 
   \begin{enumerate}
     \item Dimostrare che $\gN$ è un ideale in $\PS(X)$.
-    \item Sia $\gL\coloneqq\ring(\gA\cup\gN)$. Dimostare che $\gL=\left\{A\Delta N\st A\in\gA,N\in\gN\right\}=\left\{A\sqcup N\st A\in\gA,N\in\gN\right\}$ 
+    \item Sia $\gL\coloneqq\ring(\gA\cup\gN)$. Dimostrare che $\gL=\left\{A\Delta N\st A\in\gA,N\in\gN\right\}=\left\{A\sqcup N\st A\in\gA,N\in\gN\right\}$ 
   \end{enumerate}
 \end{exercise}
 \begin{proof}
@@ -42,12 +42,12 @@
     Mostriamo ora $\mathfrak{U}=\gL$.
     \begin{itemize}
       \item[$\supseteq$] È vero perché per definizione ogni anello è chiuso per differenza simmetrica.
-      \item[$\subseteq$] Basta mostrare che $\mathfrak{U}$ è un anello e che contiene $\gA\cup\gN$; $\gA\subseteq\mathfrak{U}$ perché ogni elemento $A$ di $\gA$ si scrive come $A\Delta \emptyset$, e analgamente  $\gN\subseteq\mathfrak{U}$ Perché ogni elemento $N$ di $\gN$ si scrive come $N\Delta \emptyset$.
+      \item[$\subseteq$] Basta mostrare che $\mathfrak{U}$ è un anello e che contiene $\gA\cup\gN$; $\gA\subseteq\mathfrak{U}$ perché ogni elemento $A$ di $\gA$ si scrive come $A\Delta \emptyset$, e analogamente  $\gN\subseteq\mathfrak{U}$ Perché ogni elemento $N$ di $\gN$ si scrive come $N\Delta \emptyset$.
       
       Per provare che $\mathfrak{U}$ è un anello mostriamo che è chiuso per unione disgiunta e differenza.
       \begin{itemize}
         \item[$\sqcup$] Siano $A\Delta N, A_1\Delta N_1\in\mathfrak{U}$ disgiunti; allora $(A\Delta N) \sqcup (A_1\Delta N_1)= (A \sqcup A_1) \Delta (N\sqcup N_1)\in\mathfrak{U}$, dove la prima uguaglianza deriva dal fatto che l'unione è disgiunta, la seconda dalla definizione.
-        \item[$\setminus$] Mostriamo che ogni elemento di $\mathfrak{T}=\mathfrak{U}$ appartiene a $\mathfrak{U}$. Siano $A\sqcup N, A_1\sqcup N_1\in\mathfrak{U}$; allora $(A\sqcup N) \setminus (A_1\sqcup N_1)=(A\setminus A_1\setminus N_1) \sqcup (N\setminus (A_1\setminus N_1)$.
+        \item[$\setminus$] Mostriamo la differenza di due elementi di $\mathfrak{T}=\mathfrak{U}$ appartiene a $\mathfrak{U}$. Siano $A\sqcup N, A_1\sqcup N_1\in\mathfrak{U}$; allora $(A\sqcup N) \setminus (A_1\sqcup N_1)=(A\setminus A_1\setminus N_1) \sqcup (N\setminus (A_1\setminus N_1)$.
 
         Ma il secondo insieme dell'unione è un sottoinsieme di $N$, e quindi appartiene all'ideale $\gN\subseteq \mathfrak{U}$.
 
