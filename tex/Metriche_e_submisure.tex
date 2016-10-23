@@ -42,7 +42,19 @@
     Mostriamo ora $\mathfrak{U}=\gL$.
     \begin{itemize}
       \item[$\supseteq$] È vero perché per definizione ogni anello è chiuso per differenza simmetrica.
-      \item[$\subseteq$] Basta mostrare che $\mathfrak{U}$ è un anello e che contiene 
+      \item[$\subseteq$] Basta mostrare che $\mathfrak{U}$ è un anello e che contiene $\gA\cup\gN$; $\gA\subseteq\mathfrak{U}$ perché ogni elemento $A$ di $\gA$ si scrive come $A\Delta \emptyset$, e analgamente  $\gN\subseteq\mathfrak{U}$ Perché ogni elemento $N$ di $\gN$ si scrive come $N\Delta \emptyset$.
+      
+      Per provare che $\mathfrak{U}$ è un anello mostriamo che è chiuso per unione disgiunta e differenza.
+      \begin{itemize}
+        \item[$\sqcup$] Siano $A\Delta N, A_1\Delta N_1\in\mathfrak{U}$ disgiunti; allora $(A\Delta N) \sqcup (A_1\Delta N_1)= (A \sqcup A_1) \Delta (N\sqcup N_1)\in\mathfrak{U}$, dove la prima uguaglianza deriva dal fatto che l'unione è disgiunta, la seconda dalla definizione.
+        \item[$\setminus$] Mostriamo che ogni elemento di $\mathfrak{T}=\mathfrak{U}$ appartiene a $\mathfrak{U}$. Siano $A\sqcup N, A_1\sqcup N_1\in\mathfrak{U}$; allora $(A\sqcup N) \setminus (A_1\sqcup N_1)=(A\setminus A_1\setminus N_1) \sqcup (N\setminus (A_1\setminus N_1)$.
+
+        Ma il secondo insieme dell'unione è un sottoinsieme di $N$, e quindi appartiene all'ideale $\gN\subseteq \mathfrak{U}$.
+
+        Inoltre $A\setminus A_1\setminus N_1=\hat A \Delta \hat N$ dove $\hat A=A\setminus A_1\in \gA$ e $\hat N=N\cap \hat A\subseteq N\in\gN$ e quindi il primo insieme dell'unione appartiene ad $\mathfrak{U}$.
+
+        Dato che abbiamo già dimostrato che $\mathfrak{U}$ è chiuso per unioni disgiunte, è chiuso anche per differenza.
+      \end{itemize}
     \end{itemize}
   \end{enumerate}
 \end{proof}
