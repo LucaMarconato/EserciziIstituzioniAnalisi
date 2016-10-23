@@ -1,28 +1,112 @@
 \documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
 \begin{document}
 
+We start with a lemma.
+\begin{lemma}
+  Every open set $A \subseteq \mathbb{R}$ can be written as a countable union of open intervals.
+\end{lemma}
+\begin{proof}
+  First, we remind what a \textit{base for a topology} is.
+  Let $(X,\tau)$ be a topological space. 
+  A base for $\tau$ is a set $\mathcal{A} \subseteq \tau$ such that
+  \begin{equation*}
+    \forall T \in \tau \ \forall x \in T \ \exists A(x,T) \in \mathcal{A}\ x \in A \subseteq T.
+  \end{equation*}
+  If $T \in \tau$, using the notation of the previous definition, then we have that
+  \begin{equation*}
+    T = \bigcup_{x \in T} A(x,T).
+  \end{equation*}
+  In other words a base for $\tau$ is a subset $\mathcal{A}$ of $\tau$ such that every set of $\tau$ can be written as an union of elements in $\mathcal{A}$.
+
+  Now, given any open set $T$ of $\mathbb{R}$ and given $x \in \mathbb{R}$ by definition exists an open interval contained in $T$ and containing $x$.
+  It is easy to find an open interval with rational endpoints which contains $x$ and which is contained in $T$.
+  This shows that the set
+  \begin{equation*}
+    \left\lbrace \ioo{a}{b}\colon a, b \in \mathbb{Q} \right\rbrace
+  \end{equation*}
+  is a base of the Euclidean topology.
+  Since the base is countable, this proves that every open set of $\mathbb{R}$ can be written as a countable union of open intervals.
+\end{proof}
+
 \begin{exercise}[2016-10-10-1]
-  Dimostrare che
+  Let us show that
   \begin{subequations}
     \begin{align}    
-      \Bor (\R) & = \sigma \left(\left\{ \ioo{a}{b} \st a, b \in \R \right\} \right) \\
-      & = \sigma \left(\left\{\icc{a}{b} \st a, b \in \R \right\}\right) \\
-      & = \sigma \left(\left\{\ioc{a}{b} \st a, b \in \Q \right\}\right) \\
-      & = \sigma (\gE_i)
+      \Bor{\mathbb{R}} & = \sigma \left(\left\{ \ioo{a}{b} \st a, b \in \mathbb{R} \right\} \right) = \sigma \left(\left\{\icc{a}{b} \st a, b \in \mathbb{R} \right\}\right) \\
+      & = \sigma \left(\left\{\ioc{a}{b} \st a, b \in \Q \right\}\right) = \sigma(\gE_i)
     \end{align}
   \end{subequations}
-  dove
+  where
   \begin{enumerate}
-    \item $\gE_{1}\coloneqq \{\ioo{a}{+\infty} \st a \in \R\}$;
-    \item $\gE_{2}\coloneqq \{\ico{a}{+\infty} \st a \in \R\}$;
-    \item $\gE_{3}\coloneqq \{\ioo{+\infty}{a} \st a \in \R\}$;
-    \item $\gE_{4}\coloneqq \{\ioc{+\infty}{a} \st a \in \R\}$;
+    \item $\gE_{1}\coloneqq \{\ioo{a}{+\infty} \st a \in \mathbb{R}\}$;
+    \item $\gE_{2}\coloneqq \{\ico{a}{+\infty} \st a \in \mathbb{R}\}$;
+    \item $\gE_{3}\coloneqq \{\ioo{+\infty}{a} \st a \in \mathbb{R}\}$;
+    \item $\gE_{4}\coloneqq \{\ioc{+\infty}{a} \st a \in \mathbb{R}\}$;
   \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Denotiamo rispettivamente con $\gA_1, \gA_2, \gA_3$ le tre famiglie di insiemi ancora senza nome che compaiono nell'enunciato.
-  Dato che l'insieme degli intervalli aperti è un sottoinsieme dell'insieme degli aperti di $\R$, passando alle $\sigma$-algebre generate otteniamo $\gA_1 \subseteq \Bor (\R)$.
-  Notiamo ora che $\gA_1 = \gA_2$, infatti $\gA_1$ contiene 
+  Let us call $\sigma({\gA_1}), \sigma({\gA_2}), \sigma({\gA_3})$ the three $\sigma$-ring that appear in the statement of this exercise that still do not have a name.
+  First, let us observe that the various $\sigma$ rings we deal with are not only $\sigma$-rings but also $\sigma$-algebras.
+  In fact for each of them $\R$ can be written as a countable union of its elements.
+
+  In order to prove the various equalities $\sigma(\mathfrak{M}) = \sigma(\mathfrak{N})$ we will first prove that $\mathfrak{M} \subseteq \mathfrak{N}$, thus obtaining $\sigma(\mathfrak{M}) \subseteq \sigma(\mathfrak{N})$ and the then we will prove that $\mathfrak{N} \subseteq \sigma(\mathfrak{M})$ concluding the proof.
+
+  Since the set of all open intervals is a subset of the family of the open sets, considering the generated $\sigma$-rings, we obtain that $\sigma(\gA_1) \subseteq \Bor{R}$. 
+  The other inclusion follows from the lemma we have seen before this exercise, which states that every open set can be written as a numerable union of open intervals.
+  $\sigma(\gA_1) = \sigma(\gA_2)$ because every open interval can be written as the complementary of a closed set and vice versa.
+  Let us now prove that $\sigma(\gA_2) = \sigma(\gA_3)$.
+  The key point is to notice that every $[a,b]$ can be written as the countable intersection $\bigcap \left\lbrace \ioc{a-\frac{1}{n}}{b}\right\rbrace$, that every $\ioc{a}{b}$ can be written as the countable union $\bigcup \left\lbrace \icc{a+\frac{1}{n}}{b}\right\rbrace$, and to remember that a $\sigma$-algebra contains all the countable unions and countable intersections.
+
+  Clearly $\sigma(\gE_1) = \sigma(\gE_4)$ and $\sigma(\gE_2) = \sigma(\gE_3)$, because every element of each first set is the complementary of an element of each second set, and vice versa.
+  The inclusion $\sigma(\gE_1) \subseteq \sigma(\gA_1)$ follows by the fact that $\ioo{a}{+\infty}$ can be written as $\ioo{a}{a + 2} \cup \bigcup \ioo{a+n}{a+n+2}$. 
+  Also the other inclusion is true because $\ioo{a}{b} = \ioo{a}{+\infty} \cap \bigcup \widetilde{\ioo{b-\frac{1}{n}}{+\infty}}$.
+
+It remains to prove that $\sigma(\gE_1) = \sigma(\gE_2)$. 
+This can be done observing that $\ioo{a}{+\infty} = \bigcup \ico{a+\frac{1}{n}}{+\infty}$ and that $\ico{a}{+\infty} = \bigcap \ioo{a-\frac{1}{n}}{+\infty}$.
+
+The exercise is completed.
+\end{proof}
+
+\begin{exercise}[2016-10-10-1]
+  Let us show that the Borel set $\Bor{\overline{\mathbb{R}}}$ coincides with the sets
+  \begin{equation*}
+    \mathfrak{S} \coloneqq \left\lbrace B \cup A \colon B \in \Bor{\mathbb{R}},\ A \subseteq \left\lbrace -\infty, +\infty\right\rbrace\right\rbrace
+  \end{equation*}
+  and also with the set
+  \begin{equation*}
+    \sigma(\mathfrak{B}) \coloneqq \sigma\left(\left\lbrace[a,+\infty] : a \in \mathbb{R}\right\rbrace \cup \left\lbrace[-\infty,+\infty]\right\rbrace\right).
+  \end{equation*}
+\end{exercise}
+\begin{proof}
+  First we are going to prove that $\mathfrak{S} = \sigma(\mathfrak{B})$.
+  The inclusion $(\supseteq)$ easily follows from the fact that every set in $\mathfrak{B}$ belongs, by definition, also to $\mathfrak{S}$.
+  In order to prove the other inclusion we will first prove that $\mathcal{B} \subseteq \sigma(\mathfrak{B})$, and the we will prove the same for $\left\lbrace -\infty, +\infty\right\rbrace$.
+  From the previous exercise, if we prove that $\mathfrak{E_2} \subseteq \sigma(\mathfrak{B})$, since $\mathcal{B} = \sigma(\mathfrak{E_2})$, we obtain that $\mathcal{B} \subseteq \sigma(\mathfrak{B})$.
+  It is sufficient to prove that $\left\lbrace +\infty\right\rbrace \in \mathfrak{B}$ since we know that
+  \begin{equation*}
+    \left\lbrace \ico{a}{+\infty} \cup \left\lbrace +\infty\right\rbrace \colon a \in \mathbb{R}\right\rbrace \subseteq \mathfrak{B}.
+  \end{equation*}
+  For this purpose let us write
+  \begin{equation*}
+    \left\lbrace+\infty\right\rbrace = \bigcap_{n \in \mathbb{N}}[n,+\infty].
+  \end{equation*}
+
+  It remains to prove that $\left\lbrace -\infty\right\rbrace \in \mathfrak{B}$.
+  This is proved by the following:
+  \begin{equation*}
+    \left\lbrace-\infty\right\rbrace = [-\infty,+\infty] \setminus \bigcup_{n \in \mathbb{N}}\icc{a}{+\infty},
+  \end{equation*}
+  which is the difference of an element of $\mathfrak{B}$ and a countable union of elements of $\mathfrak{B}$.
+ 
+  Let us now prove that $\Bor{\overline{\mathbb{R}}}$ coincides with the other two sets.
+  First we will prove that $\Bor{\overline{\mathbb{R}}} \subseteq \mathfrak{S}$.
+  In order to do this we remind who the open sets of $\overline{\mathbb{R}}$ are: if $A$ is an open set of $\overline{\mathbb{R}}$ then $A \cap \mathbb{R}$ is an open set of $\mathbb{R}$ and if $-\infty$ (respectively $+\infty$) is contained in $A$, then exists $a \in \mathbb{R}$ such that $[-\infty,a[ \subseteq A$ (respectively $]a,+\infty] \subseteq A$).
+Since all the open sets of $\overline{\mathbb{R}}$ are clearly contained in $\mathfrak{S}$, the inclusion we want to prove follows.
+
+Let us now prove that $\sigma(\mathfrak{B}) \subseteq \Bor{\overline{\mathbb{R}}}$.
+This is obvious since the sets of $\mathfrak{B}$ are all open sets of $\overline{\mathbb{R}}$ and so the sigma-ring they generate is contained in $\Bor{\overline{\mathbb{R}}}$.
+
+  This completes the proof.
 \end{proof}
 
 \begin{exercise}[insert date]  
