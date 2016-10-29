@@ -8,7 +8,7 @@ all: $(SOURCE).tex $(LIST) $(wildcard tex/*)
 
 $(LIST): tex/
 	-$(RM) $(LIST)
-	for i in `ls tex/`; do j=`echo $$i|sed 's/_/ /g'|sed 's/.tex//'`; echo "\section{$$j} \subfile{tex/$$i}">>$(LIST); done
+	for i in `ls tex/|grep -v "~"`; do j=`echo $$i|sed 's/_/ /g'|sed 's/.tex//'`; echo "\section{$$j} \subfile{tex/$$i}">>$(LIST); done
 
 
 clean:
