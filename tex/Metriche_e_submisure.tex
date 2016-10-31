@@ -17,7 +17,7 @@
   Sia $\gN\coloneqq\left\{N\st\exists A\in \gA, N\subseteq A, A\in \gN(\mu)\right\}$.
 
   \begin{enumerate}
-    \item Dimostrare che $\gN$ è un ideale in $\PS(X)$.
+    \item Dimostrare che $\gN$ è un $\sigma$-ideale in $\PS(X)$.
     \item Sia $\gL\coloneqq\ring(\gA\cup\gN)$. Dimostrare che $\gL=\left\{A\Delta N\st A\in\gA,N\in\gN\right\}=\left\{A\sqcup N\st A\in\gA,N\in\gN\right\}$ 
   \end{enumerate}
 \end{exercise}
@@ -25,7 +25,7 @@
   \begin{enumerate}
     \item Sia $\hat N\subseteq N \in \gN$; per ipotesi $\exists A\in \gA \st N \subseteq A,\, \mu(A)=0$, ma allora anche $\hat N \subseteq A$, e quindi $\hat N \in \gN$.
 
-    Consideriamo allora per $n \in \N\, N_n \in \gN$; per ipotesi $\forall n \exists A_n\in \gA \st \mu(A_n)=0,\, N_n\in A_n$; allora $\bigcup_{n \in \N} N_n\subseteq \bigcup_{n \in \N} A_n$ e per la $\sigma$-additività di $\mu$, $\mu(\bigcup_{n \in \N} A_n)\leq \sum_{n\in\N}\mu(A_n)=0$ e quindi per definizione $\bigcup_{n \in \N} N_n\in \gN$.
+    Sia ora $(N_n)_{n \in\N}$ una successione di elementi di $\gN$; per ipotesi $\forall n \exists A_n\in \gA \st \mu(A_n)=0,\, N_n\in A_n$; allora $\bigcup_{n \in \N} N_n\subseteq \bigcup_{n \in \N} A_n$ e per la $\sigma$-additività di $\mu$, $\mu(\bigcup_{n \in \N} A_n)\leq \sum_{n\in\N}\mu(A_n)=0$ e quindi per definizione $\bigcup_{n \in \N} N_n\in \gN$.
     \item Poniamo
     \begin{equation*}
       \begin{aligned}
@@ -36,22 +36,34 @@
     Mostriamo che $\mathfrak{U}=\mathfrak{T}$
     Siano $A\in\gA,N\in\gN$.
     \begin{itemize}
-      \item[$\subseteq$] Abbiamo che $A\Delta N=(A\setminus N)\sqcup (N\setminus A)$. Per ipotesi $\exists B\in\gA$ di misura nulla (e quindi $B\in\gN$) tale che $N\subseteq B$, e $A\setminus N=(A\setminus B)\sqcup (B\setminus N)$. Allora $A\Delta N=(A\setminus B)\sqcup (B\setminus N)\sqcup (N\setminus A)$, dove $A\setminus B\in \gA$ e $(B\setminus N)\sqcup (N\setminus A)\in \gN$, e dunque $A\Delta N\in \mathfrak{T}$.
-      \item[$\supseteq$] Sia inoltre $A\cap N=\emptyset$. Allora $A\sqcup N=A\Delta N$ e la tesi è provata.
+      \item[$\subseteq$] Consideriamo $A\Delta N=(A\setminus N)\sqcup (N\setminus A)$. Per ipotesi $\exists C\in\gA$ di misura nulla tale che $N\subseteq C$. Sia $B=A\cap C$; allora
+      \begin{equation*}
+        B\in\gN, B\in\gA, \mu(B)=0;
+      \end{equation*}
+      inoltre
+      \begin{equation*}
+        A\setminus N=(A\setminus B)\sqcup (B\setminus N).
+      \end{equation*}
+      Allora abbiamo
+      \begin{equation*}
+        A\Delta N=(A\setminus B)\sqcup (B\setminus N)\sqcup (N\setminus A)
+      \end{equation*}
+      dove $A\setminus B\in \gA$ e $(B\setminus N)\sqcup (N\setminus A)\in \gN$, e dunque $A\Delta N\in \mathfrak{T}$.
+      \item[$\supseteq$] Sia ora $A\cap N=\emptyset$. Allora $A\sqcup N=A\Delta N$ e la tesi è provata.
     \end{itemize}
     Mostriamo ora $\mathfrak{U}=\gL$.
     \begin{itemize}
       \item[$\supseteq$] È vero perché per definizione ogni anello è chiuso per differenza simmetrica.
       \item[$\subseteq$] Basta mostrare che $\mathfrak{U}$ è un anello e che contiene $\gA\cup\gN$; $\gA\subseteq\mathfrak{U}$ perché ogni elemento $A$ di $\gA$ si scrive come $A\Delta \emptyset$, e analogamente  $\gN\subseteq\mathfrak{U}$ Perché ogni elemento $N$ di $\gN$ si scrive come $N\Delta \emptyset$.
       
-      Per provare che $\mathfrak{U}$ è un anello mostriamo che è chiuso per unione disgiunta e differenza.
+      Per provare che $\mathfrak{U}$ è un anello mostriamo che $\mathfrak{T}$ è chiuso per unione disgiunta e differenza.
       \begin{itemize}
-        \item[$\sqcup$] Siano $A\Delta N, A_1\Delta N_1\in\mathfrak{U}$ disgiunti; allora $(A\Delta N) \sqcup (A_1\Delta N_1)= (A \sqcup A_1) \Delta (N\sqcup N_1)\in\mathfrak{U}$, dove la prima uguaglianza deriva dal fatto che l'unione è disgiunta, la seconda dalla definizione.
-        \item[$\setminus$] Mostriamo la differenza di due elementi di $\mathfrak{T}=\mathfrak{U}$ appartiene a $\mathfrak{U}$. Siano $A\sqcup N, A_1\sqcup N_1\in\mathfrak{U}$; allora $(A\sqcup N) \setminus (A_1\sqcup N_1)=(A\setminus A_1\setminus N_1) \sqcup (N\setminus (A_1\setminus N_1)$.
+        \item[$\sqcup$] Siano $A\sqcup N, A_1\sqcup N_1\in\mathfrak{U}$ disgiunti; allora $(A\sqcup N) \sqcup (A_1\sqcup N_1)= (A \sqcup A_1) \sqcup (N\sqcup N_1)\in\mathfrak{U}$, perché l'unione è associativa e commutativa.
+        \item[$\setminus$] Mostriamo la differenza di due elementi di $\mathfrak{T}=\mathfrak{U}$ appartiene a $\mathfrak{U}$. Siano $A\sqcup N, A_1\sqcup N_1\in\mathfrak{U}$; allora $(A\sqcup N) \setminus (A_1\sqcup N_1)=(A\setminus A_1\setminus N_1) \sqcup (N\setminus A_1\setminus N_1)$.
 
         Ma il secondo insieme dell'unione è un sottoinsieme di $N$, e quindi appartiene all'ideale $\gN\subseteq \mathfrak{U}$.
 
-        Inoltre $A\setminus A_1\setminus N_1=\hat A \Delta \hat N$ dove $\hat A=A\setminus A_1\in \gA$ e $\hat N=N\cap \hat A\subseteq N\in\gN$ e quindi il primo insieme dell'unione appartiene ad $\mathfrak{U}$.
+        Inoltre sia $N_1\subseteq B\in \gA, \mu(B)=0$ contenuto in $A\setminus A_1$. $A\setminus A_1\setminus N_1=A\setminus A_1\setminus B \sqcup B\setminus N_1$ dove e quindi il primo insieme dell'unione appartiene ad $\mathfrak{U}$.
 
         Dato che abbiamo già dimostrato che $\mathfrak{U}$ è chiuso per unioni disgiunte, è chiuso anche per differenza.
       \end{itemize}
