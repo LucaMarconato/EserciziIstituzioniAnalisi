@@ -15,14 +15,15 @@ $(LIST): tex/
 clean:
 	-$(RM) texput.log
 	-$(RM) $(LIST)
+	-$(RM) $(SOURCE).aux
 	-$(RM) $(SOURCE).bbl
-	-$(RM) $(SOURCE).tex.blg
-	-$(RM) $(SOURCE).toc
-	-$(RM) $(SOURCE).lof
+	-$(RM) $(SOURCE).bcf
 	-$(RM) $(SOURCE).blg
+	-$(RM) $(SOURCE).lof
+	-$(RM) $(SOURCE).log
 	-$(RM) $(SOURCE).out
 	-$(RM) $(SOURCE).run.xml
-	-$(RM) $(SOURCE).aux
-	-$(RM) $(SOURCE).bcf
-	-$(RM) $(SOURCE).log
+	-$(RM) $(SOURCE).tex.blg
+	-$(RM) $(SOURCE).thm
+	-$(RM) $(SOURCE).toc
 
