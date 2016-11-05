@@ -1,6 +1,23 @@
 \documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
 \begin{document}
 
+\begin{exercise}[2016-10-13]
+  Sia $\emptyset \neq \gN \subseteq \gA$ anello.
+  Mostrare che le seguenti affermazioni sono equivalenti:
+  \begin{enumerate}
+  \item $\gN$ \`e un ideale in $\gA$ (nel senso di Algebra I)    
+  \item $\displaystyle
+    \begin{cases}
+      A \subseteq B \in \gN,\ A \in \gA \Rightarrow A \in \gN \\
+      A, B \in \gN \Rightarrow A \cup B \in \gN
+    \end{cases}$
+  \item se $A \in \gA$ e $B, C \in \gN$ allora $A \in \gA$.
+  \end{enumerate}
+\end{exercise}
+\begin{proof}
+  Svolto da Ilaria.  
+\end{proof}
+
 \begin{exercise}[2016-10-20-1]
   Sia $\gA$ un anello, $\eta\colon\gA\to\Rpinf$ una submisura. Sia come al solito $\gN(\eta)=\left\{A\in\gA\st\eta(A)=0\right\}$. Dimostrare che
   \begin{enumerate}
@@ -70,7 +87,17 @@
     \end{itemize}
   \end{enumerate}
 \end{proof}
-\begin{exercise}[27/10/2016]
+
+\begin{exercise}[2016-10-14]
+  Sia $\gP \coloneqq \left\lbrace \ico{a}{b}: -\infty < a \leq b < +\infty\right\rbrace$, sia $g\colon \mathbb{R} \to \mathbb{R}$ crescente e sia $\mu_g(\ico{a}{b}) \coloneqq g(b) - g(a)$.
+  Dimostrare che $\mu_g$ è una misura finitamente additiva.
+  Dimostrare inoltre che $\mu_g$ $\sigma$-additiva se e solo se $\forall x \in \mathbb{R}\ g(x-\circ) = g(x)$. \footnote{Con $g(x-\circ)$ indichiamo $\lim_{y\to x^{-}}g(x)$}.
+\end{exercise}
+\begin{proof}
+  Svolto da Stefania.
+\end{proof}
+
+\begin{exercise}[2016-10-27]
   Definiamo $\overline \mu(A \Delta N) \coloneqq \mu (A) \,\forall A \in \gA,N\in\N$.
   Dimostrare che $\overline \mu$ è ben definita, $\sigma$-additiva, completa e che $\overline \mu\mid_{\gA}=\mu$.
 \end{exercise}
@@ -94,6 +121,16 @@
     che è la $\sigma$-additività.
   \end{itemize}
 \end{proof}
+
+\begin{exercise}[2016-10-24]
+  Sia $\gA$ anello.
+  Sia $\mu \colon \gA \to [0,+\infty]$ una misura $\sigma$-additiva.
+  Definiamo come al solito $\mu^{*}$ misura esterna e $\gM$ l'insieme dei misurabili.
+  Già sappiamo che $\extMu_{\mid\gM} \eqqcolon \overline{\mu}$ è una misura $\sigma$-additiva.
+
+  Sia ora $\gL$ anello con $\gL \subseteq \gM$, sia $\nu \colon \gL \to \icc{0}{+\infty}$ misura $\sigma$-additiva con $\nu_{\mid\gA} = \mu$.
+  Dimostrare che allora $\nu = \overline{\nu}_{\mid\gL}$.
+\end{exercise}
 \end{document}
 
 %%% Local Variables:
