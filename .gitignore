@@ -12,10 +12,6 @@ texput.log
 *.thm
 *.toc
 
-# output
-*.pdf
-output/
-
 # emacs 
 *~
 auto/

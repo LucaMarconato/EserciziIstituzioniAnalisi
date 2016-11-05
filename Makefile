@@ -5,6 +5,7 @@ SHELL := /bin/bash
 
 all: $(SOURCE).tex $(LIST) $(wildcard tex/*)
 	@$(compilecmd) $(SOURCE).tex
+	@mv $(SOURCE).pdf output/$(SOURCE).pdf
 
 $(LIST): tex/
 	-$(RM) $(LIST)
