@@ -8,7 +8,21 @@
   Dimostrare che $\nu\colon\gA\rightarrow \icc{0}{+\infty}$ è una misura $\sigma$-additiva.
 \end{exercise}
 \begin{proof}
+  Dimostriamo intanto l'additività: sia $C=A\sqcup B$; allora $f\chi_C=f\chi_A+f\chi_B$ e quindi $\nu(C)=\int f\chi_C \de \mu=\int f\chi_A \de \mu +\int f\chi_B \de \mu=\nu(A)+\nu(B)$ per la linearità dell'integrale se tutti i termini sono finiti, oppure perché per $0\leq c\leq +\infty,\ c+\infty=+\infty$.
   
+  Sia ora $(A_n)_{n \in \N}\subseteq \gA$ una successione di insiemi disgiunti, e $A=\bigsqcup_{n\in\N}A_n$. Sia $B_n=\bigcup_{j\leq n}A_j$. Per la finita additività sappiamo che
+  \begin{equation*}
+    \int f\chi_{B_n} \de \mu=\sum_{j\leq n} \int f \chi_{A_j} \de \mu
+  \end{equation*}
+  inoltre $\lim_{n\to +\infty} f\chi_{B_n}=f\chi_A$\footnote{questo limite e i prossimi esistono perché consideriamo successioni crescenti}, quindi dal lemma di Fatou
+  \begin{equation*}
+    \int f\chi_A \de \mu\leq \lim_{n \to +\infty} \int f\chi{B_n} \de \mu=\lim_{n\to +\infty} \sum_{j\leq n} \int f \chi_{A_j} \de \mu=\sum_{n\in \N} \int f \chi_{A_n} \de \mu
+  \end{equation*}
+  Infine, dato che $B_n\uparrow A,\ f\chi_{B_n}\leq f\chi_A$, e quindi per la monotonia dell'integrale $\int f \chi_A \de \mu \geq \int f\chi_{B_n}\de \mu$ e
+  \begin{equation*}
+    \int f \chi_A \de \mu \geq \sup_{n\in\N} \int f\chi_{B_n} \de \mu = \lim_{n\to +\infty} \int f\chi_{B_n} \de \mu
+  \end{equation*}
+  Questa disuguaglianza, combinata con quella che deriva dal lemma di Fatou, ci da la tesi.  
 \end{proof}
 \begin{exercise}[3/11/2016]
   Trovare dei controesempi alle seguenti:
