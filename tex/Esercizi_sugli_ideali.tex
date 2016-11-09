@@ -34,45 +34,42 @@ Assegnato a Gaetano.
 \end{proof}
   
 \begin{exercise}[13/10/2016]
-  Sia $\emptyset \in \gN \subseteq \gA$ algebra in $\powerset(X)$ con $X \not\in \gN$.
+  Sia $\emptyset \in \gN \subseteq \gA$ algebra in $\powerset(X)$ con $X \not\in \gN$. Definiamo la funzione $\nu(\cdot)$ ponendo
   \begin{enumerate}
-  \item 
+    \item 
+    \begin{equation*}
+      \nu(A) \coloneqq
+      \begin{cases}
+        0 & \text{se $A \in \gN$}\\
+        +\infty & \text{se $A \in \gA\setminus \gN$}.
+      \end{cases}
+    \end{equation*}
+    Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale. 
+    \item Definiamo ora
+    \begin{equation*}
+      \nu(A) \coloneqq
+      \begin{cases}
+        0 & \text{se $A \in \gN$}\\
+        1 & \text{se $A \in \gA\setminus \gN$}.
+      \end{cases}
+    \end{equation*}
+    Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale massimale in $\gA$.
   \end{enumerate}
-  Definiamo la funzione $\nu(\cdot)$ ponendo 
-  \begin{equation*}
-    \nu(A) \coloneqq
-    \begin{cases}
-      0 & \text{se $A \in \gN$}\\
-      +\infty & \text{se $A \in \gA\setminus \gN$}.
-    \end{cases}
-  \end{equation*}
-  Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale. 
-\item Definiamo ora
-  \begin{equation*}
-    \nu(A) \coloneqq
-    \begin{cases}
-      0 & \text{se $A \in \gN$}\\
-      1 & \text{se $A \in \gA\setminus \gN$}.
-    \end{cases}
-  \end{equation*}
-  Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale massimale in $\gA$.
 \end{exercise}
 \begin{proof}
-  La prima parte è stata svolta da Stefano, la seconda è da svolgere.
-
-
-  Seconda parte:
-  Sappiamo già che gli insiemi di misura nulla formano un ideale. Resta quindi da dimostrare che $\nu$ è finitamente additiva se e solo se questo ideale è massimale.
-  \begin{itemize}
-    \item[$\Rightarrow$] Supponiamo che la misura sia finitamente additiva e per assurdo $\gN$ non sia massimale. Allora $\exists A\in\gA \st A\notin \gN, \compl{A}\notin\gN$. Allora $\nu(X)=\nu(A\sqcup \compl{A})=\nu(A)+\nu (\compl{A})=2$, assurdo.
-    \
-    \item[$\Leftarrow$] Sia ora $\gN$ massimale, e consideriamo $A,B\in\gA$ disgiunti. Ci sono tre possibilità:
+  \begin{enumerate}
+    \item La prima parte è stata svolta da Stefano.
+    \item Sappiamo già che gli insiemi di misura nulla formano un ideale. Resta quindi da dimostrare che $\nu$ è finitamente additiva se e solo se questo ideale è massimale.
     \begin{itemize}
-      \item Se $A,B\in\gN$, $\nu(A)=\nu(B)=\nu(A \cup B)=0$ e la finita additività vale.
-      \item Se esattamente uno tra $A$ e $B$ è un elemento di $\gN$, $A\cup B \notin \gN$, perché l'ideale è chiuso per sottoinsiemi. In questo caso $\nu(A)+\nu(B)=1+0=\nu(A \cup B)$ e la finita additività vale.
-      \item Se $A,B\notin\gN,\ \nu(A)+\nu(B)=2>\nu(A \cup B)$. Dimostriamo allora per assurdo che questo caso non può verificarsi. Per la massimalità dell'ideale $\compl{A},\compl{B}\in\gN$ e  inoltre $\gN \ni \compl{A} \cup \compl{B}=\compl{A\cap B}=\compl{\emptyset}=X$, assurdo perché per definizione gli ideali massimali sono propri.
+      \item[$\Rightarrow$] Supponiamo che la misura sia finitamente additiva e per assurdo $\gN$ non sia massimale. Allora $\exists A\in\gA \st A\notin \gN, \compl{A}\notin\gN$. Allora $\nu(X)=\nu(A\sqcup \compl{A})=\nu(A)+\nu (\compl{A})=2$, assurdo.
+      \item[$\Leftarrow$] Sia ora $\gN$ massimale, e consideriamo $A,B\in\gA$ disgiunti. Ci sono tre possibilità:
+      \begin{itemize}
+        \item Se $A,B\in\gN$, $\nu(A)=\nu(B)=\nu(A \cup B)=0$ e la finita additività vale.
+        \item Se esattamente uno tra $A$ e $B$ è un elemento di $\gN$, $A\cup B \notin \gN$, perché l'ideale è chiuso per sottoinsiemi. In questo caso $\nu(A)+\nu(B)=1+0=\nu(A \cup B)$ e la finita additività vale.
+        \item Se $A,B\notin\gN,\ \nu(A)+\nu(B)=2>\nu(A \cup B)$. Dimostriamo allora per assurdo che questo caso non può verificarsi. Per la massimalità dell'ideale $\compl{A},\compl{B}\in\gN$ e  inoltre $\gN \ni \compl{A} \cup \compl{B}=\compl{A\cap B}=\compl{\emptyset}=X$, assurdo perché per definizione gli ideali massimali sono propri.
+      \end{itemize}
     \end{itemize}
-  \end{itemize}
+  \end{enumerate}
 \end{proof}
 \end{document}
 
