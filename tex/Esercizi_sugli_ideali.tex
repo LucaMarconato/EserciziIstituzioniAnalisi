@@ -24,17 +24,25 @@ Assegnato a Gaetano.
 \end{proof}
 
 \begin{exercise}[13/10/2016]
-  Le definizioni di ideale massimale nel senso di algebra e di analisi sono equivalenti.
+  Le seguenti due proprietà sono equivalenti per un ideale $\gN$ in un'algebra di insiemi $\gA \subseteq \PS(X)$.
+  \begin{enumerate}
+    \item \label{ideal:algebra} Essere massimale nella famiglia degli ideali propri. 
+    \item \label{ideal:analysis} Essere un ideale massimale come nella definizione per famiglie di insiemi, cioè $\forall A\in \gA,\ A\in\gN \lor \compl{A}\in\gN$.
+  \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Se $\gN$ è un ideale nel senso di algebra, allora sappiamo che $\frac{\gA}{\gN}$ è un campo. Sa ppiamo anche che l'elemento unitario di $\gA$ è $X$, e quindi la classe $X+\gN$ è l'unità del campo.  
-  Questo significa che $\forall A \in \gA, A \notin \gN\ \exists B \st A+\gN \cdot B+\gN = X+\gN$, cioè
+  Assumendo il \cref{ideal:algebra}, sappiamo per un teorema di algebra che $\frac{\gA}{\gN}$ è un campo. L'elemento unitario di $\gA$ è $X$, e quindi la classe $X+\gN$ è l'unità del campo.  
+  Questo significa che
   \begin{equation*}
-    A \cap B \in X \Delta \gN=\{D\in \gA \st \exists N\in \gN, D=X\setminus N \}
+    \forall A \in \gA, A \notin \gN\ \exists B \st A+\gN \cdot B+\gN = X+\gN
+  \end{equation*}
+  cioè
+  \begin{equation*}
+    A \cap B \in X \Delta \gN \coloneqq \{D\in \gA \st \exists N\in \gN, D = X\setminus N \}
   \end{equation*}
   e quindi $A$ coincide con $X$ a meno di un elemento dell'ideale $\gN$, ossia $\compl{A}\in \gN$.
 
-  Se $\gN$ è un ideale massimale in $\gA\subseteq \PS(X)$ nel senso di analisi, allora è anche massimale nell'insieme degli ideali propri (cioè la definizione di algebra): se per assurdo non lo fosse, esisterebbe $A\notin \gN$ tale che l'ideale $\gN'$ generato da $\gN\cup \{A\}$ è proprio. Per definizione di ideale massimale (in analisi) $\compl{A}\in \gN$ e quindi, dato che un ideale è chiuso per unione $X=A\cup\compl{A}\in \gN'$, e poiché gli ideali sono chiusi per contenimento $\gN'=\gA$, assurdo.
+  Assumendo il \cref{ideal:analysis}, supponiamo per assurdo che non valga il \cref{ideal:algebra}: allora esiste $A\notin \gN$ tale che l'ideale $\gN'$ generato da $\gN\cup \{A\}$ è proprio. Per il \cref{ideal:analysis} $\compl{A}\in \gN$ e quindi, dato che un ideale è chiuso per unione $X=A\cup\compl{A}\in \gN'$, e poiché gli ideali sono chiusi per contenimento $\gN'=\gA$, assurdo.
 \end{proof}
 \begin{remark}
   Il campo quoziente dell'esercizio precedente è $\mathbb{F}_2$, infatti ogni elemento non nullo 
