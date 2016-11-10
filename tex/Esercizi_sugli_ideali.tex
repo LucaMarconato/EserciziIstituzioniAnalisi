@@ -1,5 +1,4 @@
-
-1;2802;0c\documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
+\documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
 \begin{document}
 \begin{exercise}[13/10/2016]
 Sia $\gN$ un ideale di un anello $\gA$.
@@ -28,11 +27,19 @@ Assegnato a Gaetano.
   Le definizioni di ideale massimale nel senso di algebra e di analisi sono equivalenti.
 \end{exercise}
 \begin{proof}
-  Scrivo velocemente un'implicazione, va messo a posto.
+  Se $\gN$ è un ideale nel senso di algebra, allora sappiamo che $\frac{\gA}{\gN}$ è un campo. Sa ppiamo anche che l'elemento unitario di $\gA$ è $X$, e quindi la classe $X+\gN$ è l'unità del campo.  
+  Questo significa che $\forall A \in \gA, A \notin \gN\ \exists B \st A+\gN \cdot B+\gN = X+\gN$, cioè
+  \begin{equation*}
+    A \cap B \in X \Delta \gN=\{D\in \gA \st \exists N\in \gN, D=X\setminus N \}
+  \end{equation*}
+  e quindi $A$ coincide con $X$ a meno di un elemento dell'ideale $\gN$, ossia $\compl{A}\in \gN$.
 
   Se $\gN$ è un ideale massimale in $\gA\subseteq \PS(X)$ nel senso di analisi, allora è anche massimale nell'insieme degli ideali propri (cioè la definizione di algebra): se per assurdo non lo fosse, esisterebbe $A\notin \gN$ tale che l'ideale $\gN'$ generato da $\gN\cup \{A\}$ è proprio. Per definizione di ideale massimale (in analisi) $\compl{A}\in \gN$ e quindi, dato che un ideale è chiuso per unione $X=A\cup\compl{A}\in \gN'$, e poiché gli ideali sono chiusi per contenimento $\gN'=\gA$, assurdo.
 \end{proof}
-  
+\begin{remark}
+  Il campo quoziente dell'esercizio precedente è $\mathbb{F}_2$, infatti ogni elemento non nullo 
+\end{remark}
+
 \begin{exercise}[13/10/2016]
   Sia $\emptyset \in \gN \subseteq \gA$ algebra in $\powerset(X)$ con $X \not\in \gN$. Definiamo la funzione $\nu(\cdot)$ ponendo
   \begin{enumerate}
