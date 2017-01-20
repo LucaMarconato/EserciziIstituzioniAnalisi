@@ -1,15 +1,10 @@
 \documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
 \begin{document}
-
-\begin{exercise}
-  
-\end{exercise}
-
 \begin{exercise}[13/10/2016]
 Sia $\gN$ un ideale di un anello $\gA$.
 \begin{enumerate}
 \item Descrivere l'insieme $\alg(\gN)$.
-\item Dimostrare che se $\gN$ \`e un $\sigma$-ideale in $\gA$ e se $\gM$ \`e un $\sigma$-anello allora $\alg(\gM)$ \`e in realt\`a una $\sigma$-algebra.
+\item Dimostrare che se $\gN$ è un $\sigma$-ideale in $\gA$ e se $\gM$ è un $\sigma$-anello allora $\alg(\gM)$ è in realtà una $\sigma$-algebra.
 \end{enumerate}
 \end{exercise}
 \begin{proof}
@@ -21,7 +16,7 @@ Sia $\emptyset \neq \gE \subseteq \powerset(X)$ e sia $\emptyset \neq A \subsete
 Allora $\sigma(\gE \cap A) = \sigma(\gE) \cap A$ avendo definito $\gE \cap A \coloneqq \left\lbrace E \cap A \colon E \in \gE\right\rbrace$.
 \begin{enumerate}
 \item Descrivere l'insieme $\alg(\gN)$.
-\item Dimostrare che se $\gN$ \`e un $\sigma$-ideale in $\gA$ e se $\gM$ \`e un $\sigma$-anello allora $\alg(\gM)$ \`e in realt\`a una $\sigma$-algebra.
+\item Dimostrare che se $\gN$ è un $\sigma$-ideale in $\gA$ e se $\gM$ è un $\sigma$-anello allora $\alg(\gM)$ è in realtà una $\sigma$-algebra.
 \end{enumerate}
 \end{exercise}
 \begin{proof}
@@ -29,31 +24,69 @@ Assegnato a Gaetano.
 \end{proof}
 
 \begin{exercise}[13/10/2016]
-  Sia $\emptyset \in \gN \subseteq \gA$ algebra in $\powerset(X)$ con $X \not\in \gN$.
+  Le seguenti due proprietà sono equivalenti per un ideale $\gN$ in un'algebra di insiemi $\gA \subseteq \PS(X)$.
   \begin{enumerate}
-  \item 
+    \item \label{ideal:algebra} Essere massimale nella famiglia degli ideali propri. 
+    \item \label{ideal:analysis} Essere un ideale massimale come nella definizione per famiglie di insiemi, cioè $\forall A\in \gA,\ A\in\gN \lor \compl{A}\in\gN$.
   \end{enumerate}
-  Definiamo la funzione $\nu(\cot)$ ponendo 
-  \begin{equation*}
-    \nu(A) \coloneqq
-    \begin{cases}
-      0 & \text{se $A \in \gN$}\\
-      +\infty & \text{se $A \in \gA\setminus \gN$}.
-    \end{cases}
-  \end{equation*}
-  Mostrare che $\nu$ \`e finitamente additiva se e solo se $\gN$ \`e un ideale. 
-\item Definiamo ora
-  \begin{equation*}
-    \nu(A) \coloneqq
-    \begin{cases}
-      0 & \text{se $A \in \gN$}\\
-      1 & \text{se $A \in \gA\setminus \gN$}.
-    \end{cases}
-  \end{equation*}
-  Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale massimale in $\gA$.
 \end{exercise}
 \begin{proof}
-La prima parte è stata svolta da Stefano, la seconda è da svolgere.
+  \begin{itemize}
+    \item[$\Rightarrow$] Sappiamo per un teorema di algebra che $\frac{\gA}{\gN}$ è un campo. L'elemento unitario di $\gA$ è $X$, e quindi la classe $X+\gN$ è l'unità del campo.  
+    Questo significa che
+    \begin{equation*}
+      \forall A \in \gA, A \notin \gN\ \exists B \st A+\gN \cdot B+\gN = X+\gN
+    \end{equation*}
+    cioè
+    \begin{equation*}
+      A \cap B \in X \Delta \gN \coloneqq \{D\in \gA \st \exists N\in \gN, D = X\setminus N \}
+    \end{equation*}
+    e quindi $A$ coincide con $X$ a meno di un elemento dell'ideale $\gN$, ossia $\compl{A}\in \gN$.
+    
+    \item[$\Leftarrow$] Supponiamo per assurdo che non valga il \cref{ideal:algebra}: allora esiste $A\notin \gN$ tale che l'ideale $\gN'$ generato da $\gN\cup \{A\}$ è proprio. Per il \cref{ideal:analysis} $\compl{A}\in \gN$ e quindi, dato che un ideale è chiuso per unione $X=A\cup\compl{A}\in \gN'$, e poiché gli ideali sono chiusi per contenimento $\gN'=\gA$, assurdo.
+  \end{itemize}
+\end{proof}
+\begin{remark}
+  Il campo quoziente dell'esercizio precedente è $\mathbb{F}_2$, infatti ogni elemento non nullo 
+\end{remark}
+
+\begin{exercise}[13/10/2016]
+  Sia $\emptyset \in \gN \subseteq \gA$ algebra in $\powerset(X)$ con $X \not\in \gN$. Definiamo la funzione $\nu(\cdot)$ ponendo
+  \begin{enumerate}
+    \item 
+    \begin{equation*}
+      \nu(A) \coloneqq
+      \begin{cases}
+        0 & \text{se $A \in \gN$}\\
+        +\infty & \text{se $A \in \gA\setminus \gN$}.
+      \end{cases}
+    \end{equation*}
+    Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale. 
+    \item Definiamo ora
+    \begin{equation*}
+      \nu(A) \coloneqq
+      \begin{cases}
+        0 & \text{se $A \in \gN$}\\
+        1 & \text{se $A \in \gA\setminus \gN$}.
+      \end{cases}
+    \end{equation*}
+    Mostrare che $\nu$ è finitamente additiva se e solo se $\gN$ è un ideale massimale in $\gA$.
+  \end{enumerate}
+\end{exercise}
+\begin{proof}
+  \begin{enumerate}
+    \item La prima parte è stata svolta da Stefano.
+    \item Sappiamo già che gli insiemi di misura nulla formano un ideale. Resta quindi da dimostrare che $\nu$ è finitamente additiva se e solo se questo ideale è massimale.
+    \begin{itemize}
+      \item[$\Rightarrow$] Supponiamo che la misura sia finitamente additiva e per assurdo $\gN$ non sia massimale. Allora $\exists A\in\gA \st A\notin \gN, \compl{A}\notin\gN$. Allora $\nu(X)=\nu(A\sqcup \compl{A})=\nu(A)+\nu (\compl{A})=2$, assurdo.
+      \item[$\Leftarrow$] Sia ora $\gN$ massimale, e consideriamo $A,B\in\gA$ disgiunti. Ci sono tre possibilità:
+      \begin{itemize}
+        \item Se $A,B\in\gN$, $\nu(A)=\nu(B)=\nu(A \cup B)=0$ e la finita additività vale.
+        \item Se esattamente uno tra $A$ e $B$ è un elemento di $\gN$, $A\cup B \notin \gN$, perché l'ideale è chiuso per sottoinsiemi. In questo caso $\nu(A)+\nu(B)=1+0=\nu(A \cup B)$ e la finita additività vale.
+        \item Se $A,B\notin\gN,\ \nu(A)+\nu(B)=2>\nu(A \cup B)$. Dimostriamo allora per assurdo che questo caso non può verificarsi. Per la massimalità dell'ideale $\compl{A},\compl{B}\in\gN$ e  inoltre $\gN \ni \compl{A} \cup \compl{B}=\compl{A\cap B}=\compl{\emptyset}=X$, assurdo perché per definizione gli ideali massimali sono propri.
+      \end{itemize}
+    \end{itemize}
+  \end{enumerate}
 \end{proof}
 \end{document}
 
