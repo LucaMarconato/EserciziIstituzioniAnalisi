@@ -98,28 +98,34 @@
 \end{proof}
 
 \begin{exercise}[2016-10-27]
-  Definiamo $\overline \mu(A \Delta N) \coloneqq \mu (A) \,\forall A \in \gA,N\in\N$.
-  Dimostrare che $\overline \mu$ è ben definita, $\sigma$-additiva, completa e che $\overline \mu\mid_{\gA}=\mu$.
+  Definiamo $\overline \mu(A \Delta N) \coloneqq \mu (A) \,\forall A \in \gA,N\in\gN$.
+  \begin{enumerate}
+    \item Dimostrare che $\overline \mu$ è ben definita, $\sigma$-additiva, completa e che $\overline \mu\mid_{\gA}=\mu$.
+    \item Dimostrare che $\gN=\gN(\overline{\mu})$.
+  \end{enumerate}
 \end{exercise}
 \begin{remark}
   La misura $\overline\mu$ così definita si dice completamento di $\mu$.
 \end{remark}
 \begin{proof}
-  Definiamo $\mathfrak{U}\coloneqq \left\{A\Delta N\st A\in\gA,N\in\gN\right\}$. Gli ultimi due punti sono ovvi prendendo $A=\emptyset$ e $N=\emptyset$ rispettivamente. Dimostriamo quindi i primi due.
-  \begin{itemize}
-    \item Dimostriamo che $\overline\mu$ è ben definita. Sia $A_1 \Delta N_1=A_2\Delta N_2$, con $A_1,A_2\in \gA; N_1,N_2\in\gN$. Allora $\exists B_1, B_2\in \gA\st \mu(B_1)=\mu(B_2)=0, N_1\subseteq B_1, N_2\subseteq B_2$. Quindi $A_1\subseteq A_2\cup B_1 \cup B_2$ e per l'additività della misura $\mu(A_1)\leq \mu(A_2)+\mu(B_1)+\mu(B_2)=\mu(A_2)$; allo stesso modo anche $\mu(A_2)\leq \mu(A_1)$ e quindi $\mu(A_1)=\mu(A_2)$.
-    \item Per dimostrare la $\sigma$-additività utilizziamo l'esercizio precedente: dati $A,N$ come nelle ipotesi, $\exists \overline A\in \gA; \overline N\in\gN \st A \Delta N= \overline A \sqcup \overline N$. Inoltre, per la buona definizione di $\overline \mu$, e poiché $\overline A \sqcup \overline N=\overline A \Delta \overline N$, abbiamo che $\mu(A)=\mu(\overline A)$. Sia quindi $\left(A_k \Delta N_k \right)_{k\in \N}$ una successione di elementi disgiunti in $\mathfrak{U}$. Dato che $\gN$ è un $\sigma$-anello $\exists \hat A\st \mu(\hat A)=0, \bigcup_{k \in \N} N_k\subseteq \hat A$. Inoltre detti $\hat A_k\coloneqq A_k \setminus \hat A$, si ha $\mu(A_k)=\mu(\hat A_k)$.
-    \begin{equation*}
-      \begin{aligned}
-        \overline \mu\left(\bigsqcup_{k\in \N} \left( A_k \Delta N_k\right)\right)&=\overline \mu\left(\bigsqcup_{k\in \N} \left(\overline A_k \sqcup \overline N_k\right)\right)=\\
-        &=\overline \mu\left(\bigsqcup_{k\in \N} \left(\hat A_k \sqcup \left(\overline N_k \cup\hat A \right)\right)\right)=\\
-        &=\overline \mu\left(\hat A \sqcup \bigsqcup_{k\in \N} \hat A_k \right)=\\
-        &=\mu\left(\bigsqcup_{k\in \N} \hat A_k\right)=\sum_{k \in \N}\mu\left(\hat A_k\right)=\sum_{k \in \N}\mu\left(A_k\right)=\\
-        &=\sum_{k \in \N}\overline\mu\left(A_k \Delta N_k\right)
-      \end{aligned}
-    \end{equation*}
-    che è la $\sigma$-additività.
-  \end{itemize}
+  \begin{enumerate}
+    \item Definiamo $\mathfrak{U}\coloneqq \left\{A\Delta N\st A\in\gA,N\in\gN\right\}$. Gli ultimi due punti sono ovvi prendendo $A=\emptyset$ e $N=\emptyset$ rispettivamente. Dimostriamo quindi i primi due.
+    \begin{itemize}
+      \item Dimostriamo che $\overline\mu$ è ben definita. Sia $A_1 \Delta N_1=A_2\Delta N_2$, con $A_1,A_2\in \gA; N_1,N_2\in\gN$. Allora $\exists B_1, B_2\in \gA\st \mu(B_1)=\mu(B_2)=0, N_1\subseteq B_1, N_2\subseteq B_2$. Quindi $A_1\subseteq A_2\cup B_1 \cup B_2$ e per l'additività della misura $\mu(A_1)\leq \mu(A_2)+\mu(B_1)+\mu(B_2)=\mu(A_2)$; allo stesso modo anche $\mu(A_2)\leq \mu(A_1)$ e quindi $\mu(A_1)=\mu(A_2)$.
+      \item Per dimostrare la $\sigma$-additività utilizziamo l'esercizio precedente: dati $A,N$ come nelle ipotesi, $\exists \overline A\in \gA; \overline N\in\gN \st A \Delta N= \overline A \sqcup \overline N$. Inoltre, per la buona definizione di $\overline \mu$, e poiché $\overline A \sqcup \overline N=\overline A \Delta \overline N$, abbiamo che $\mu(A)=\mu(\overline A)$. Sia quindi $\left(A_k \Delta N_k \right)_{k\in \N}$ una successione di elementi disgiunti in $\mathfrak{U}$. Dato che $\gN$ è un $\sigma$-anello $\exists \hat A\st \mu(\hat A)=0, \bigcup_{k \in \N} N_k\subseteq \hat A$. Inoltre detti $\hat A_k\coloneqq A_k \setminus \hat A$, si ha $\mu(A_k)=\mu(\hat A_k)$.
+      \begin{equation*}
+        \begin{aligned}
+          \overline \mu\left(\bigsqcup_{k\in \N} \left( A_k \Delta N_k\right)\right)&=\overline \mu\left(\bigsqcup_{k\in \N} \left(\overline A_k \sqcup \overline N_k\right)\right)=\\
+          &=\overline \mu\left(\bigsqcup_{k\in \N} \left(\hat A_k \sqcup \left(\overline N_k \cup\hat A \right)\right)\right)=\\
+          &=\overline \mu\left(\hat A \sqcup \bigsqcup_{k\in \N} \hat A_k \right)=\\
+          &=\mu\left(\bigsqcup_{k\in \N} \hat A_k\right)=\sum_{k \in \N}\mu\left(\hat A_k\right)=\sum_{k \in \N}\mu\left(A_k\right)=\\
+          &=\sum_{k \in \N}\overline\mu\left(A_k \Delta N_k\right)
+        \end{aligned}
+      \end{equation*}
+      che è la $\sigma$-additività.
+    \end{itemize}
+    \item Gli elementi di $\gN$ hanno tutti misura nulla perché sottoinsiemi di insiemi di misura nulla. Viceversa, sia $A$ un insieme di misura nulla. Allora ovviamente $A\subseteq A$ e $\mu(A)=0$, quindi per definizione $A\in \gN$.
+  \end{enumerate}
 \end{proof}
 
 \begin{exercise}[2016-10-24]
