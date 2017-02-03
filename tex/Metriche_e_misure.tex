@@ -20,11 +20,32 @@
 
 \begin{exercise}[2016-10-14]
   Sia $\gP \coloneqq \left\lbrace \ico{a}{b}: -\infty < a \leq b < +\infty\right\rbrace$, sia $g\colon \mathbb{R} \to \mathbb{R}$ crescente e sia $\mu_g(\ico{a}{b}) \coloneqq g(b) - g(a)$.
-  Dimostrare che $\mu_g$ è una misura finitamente additiva.
-  Dimostrare inoltre che $\mu_g$ $\sigma$-additiva se e solo se $\forall x \in \mathbb{R}\ g(x-\circ) = g(x)$. \footnote{Con $g(x-\circ)$ indichiamo $\lim_{y\to x^{-}}g(x)$}.
+  \begin{enumerate}
+    \item Dimostrare che $\mu_g$ è una misura finitamente additiva.
+    \item Dimostrare che $\mu_g$ $\sigma$-additiva se e solo se $\forall x \in \mathbb{R}\ g(x-\circ) = g(x)$. \footnote{Con $g(x-\circ)$ indichiamo $\lim_{y\to x^{-}}g(y)$}.
+  \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Svolto da Stefania.
+  \begin{enumerate}
+    \item Mostriamo che se l'unione di un numero finito di elementi di $\gP$ appartiene a $\gP$, allora la misura dell'unione è la somma delle misure.
+
+    Sia quindi $\ico{a}{b}=\bigsqcup_{k=1}^{n}\ico{a_k}{b_k}$; a meno di un riordinamento \footnote{e forse di intervalli vuoti?} possiamo supporre che per
+    $2\leq k\leq n\ b_k=a_{k-1};\ a_1=a=b_0, b_n=b$.
+
+    Allora $\mu_g(\ico{a}{b})=g(b)-g(a)=\sum_{k=1}^n (g(b_k)-g(b_{k-1}))=\sum_{k=1}^n (g(b_k)-g(a_k))=\sum_{k=1}^n \mu_g(\ico{a_k}{b_k})$.
+    \item Dimostriamo le due implicazioni.
+    \begin{enumerate}
+      \item[$\Rightarrow$] Supponiamo per assurdo che esista $(x_n)_{n\in \N}, x_n \rightarrow x^-$ e $g(x-\circ) < g(x)$; allora $\Delta_n=[x,x_n]\downarrow\emptyset$, ma $\mu_g(\Delta_n) \rightarrow g(x)-g(x-\circ)>0$, assurdo. 
+      \item[$\Leftarrow$] Sia $\gA=\ring(\gP)$; sappiamo che $\mu_g$ è finitamente additiva, quindi resta solo da dimostrare che $\mu_g$ è regolare (cioè $\forall A\in \gA, \forall \varepsilon>0$ esistono un compatto $K \subseteq A, B \in \gA$ tali che $A\setminus K\subseteq B, \mu_g(B)<\varepsilon$).
+
+      Siano allora $\varepsilon>0, \gA\ni A=\bigsqcup_{k=1}^n\ico{a_k}{b_k}$, con $\icc{a_k}{b_k}\in \gP$; dall'ipotesi che $g$ è continua a sinistra sappiamo che $\forall x \exists \delta(x) \st g(x)-g(x-\delta)<\frac{\varepsilon}{n}$.
+
+      Poniamo allora $\delta_j=\delta(x_j),\ K_j=\icc{a_j}{b_j-\delta_j},\ B_j=\ico{b_j-\delta_j}{b_j}$. Siano inoltre $B=\bigcup B_j,\ K=\bigcup K_j$
+
+      Allora $\mu_g(B_j)=g(b_j)-g(b_j-\delta_j)<\frac{\varepsilon}{n}$, quindi $\mu_g(B)<\varepsilon$; inoltre $K$ è compatto e dunque $B$ e $K$ sono come nella definizione di misura regolare.
+    \end{enumerate}
+
+  \end{enumerate}
 \end{proof}
 
 \begin{exercise}[2016-10-20]
