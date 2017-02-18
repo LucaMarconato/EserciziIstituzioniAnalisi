@@ -6,18 +6,22 @@
   \begin{enumerate}
     \item \label{ideal:algebraIdealDefinition} $\gN$ \`e un ideale in $\gA$ (nel senso di Algebra I)
     \item \label{ideal:setTheoryIdealDefinition} $\gN$ è un ideale secondo la definizionedi teoria degli insiemi, ossia se valgono le condizioni seguenti:
-    \begin{numcases}{}
-      \label{ideal:setTheoryIdealDefinitionC1} A \subseteq B \in \gN,\ A \in \gA \Rightarrow A \in \gN\\
-      \label{ideal:setTheoryIdealDefinitionC2} A, B \in \gN \Rightarrow A \cup B \in \gN
-    \end{numcases}
+    \begin{subnumcases}{}
+      A \subseteq B \in \gN,\ A \in \gA \Rightarrow A \in \gN \label{ideal:setTheoryIdealDefinitionC1}
+      \\
+      A, B \in \gN \Rightarrow A \cup B \in \gN \label{ideal:setTheoryIdealDefinitionC2}
+    \end{subnumcases}
     \item \label{ideal:varIdealDefinition} se $A \in \gA,\ B, C \in \gN$ e $A\subseteq B \cup C$ allora $A \in \gN$.
   \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Mostriamo la catena di implicazioni $2\implies 3\implies 1$.
+  Mostriamo la catena di implicazioni $2\implies 3\implies 1\implies 2$.
   \begin{itemize}
-    \item[$2\implies 3$] Siano $A,B,C$ come nelle ipotesi di \cref{ideal:varIdealDefinition}. Allora per ipotesi vale \cref{ideal:setTheoryIdealDefinitionC2}, e quindi $B\cup C\in \gN$.
-    Usando quindi il fatto che $A\subseteq B\cup C$ e l'ipotesi \cref{ideal:setTheoryIdealDefinitionC1}, si ottiene $A\in \gN$.
+    \item[$2\implies 3$] Siano $A,B,C$ come nelle ipotesi del \cref{ideal:varIdealDefinition}. Allora per ipotesi vale \ref{ideal:setTheoryIdealDefinitionC2}, e quindi $B\cup C\in \gN$.
+    Usando quindi il fatto che $A\subseteq B\cup C$ e l'ipotesi \ref{ideal:setTheoryIdealDefinitionC1}, si ottiene $A\in \gN$.
+    \item[$3\implies 1$] Siano $A\in\gA, B\in\gN$; allora $\gA\ni A\cap B\subseteq B\cup B$ dunque per il \cref{ideal:varIdealDefinition} $A\cap B\in\gN$.
+    
+    Siano ora $A,B\in\gN$; allora per definizione di differenza simmetrica $\gA\ni A\Delta B\subseteq A\cup B$ e dunque per il \cref{ideal:varIdealDefinition} $A\Delta B\in\gN$.
   \end{itemize}
 \end{proof}
 
