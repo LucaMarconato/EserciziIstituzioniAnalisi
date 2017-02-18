@@ -1,24 +1,28 @@
 \documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
-\begin{document}
+\begin{document} %label prefix: ideal:
 \begin{exercise}[2016-10-13]
   Sia $\emptyset \neq \gN \subseteq \gA$ anello.
   Mostrare che le seguenti affermazioni sono equivalenti:
   \begin{enumerate}
-  \item $\gN$ \`e un ideale in $\gA$ (nel senso di Algebra I)    
-  \item $\displaystyle
-    \begin{cases}
-      A \subseteq B \in \gN,\ A \in \gA \Rightarrow A \in \gN \\
-      A, B \in \gN \Rightarrow A \cup B \in \gN
-    \end{cases}$
-  \item se $A \in \gA$ e $B, C \in \gN$ allora $A \in \gA$.
+    \item \label{ideal:algebraIdealDefinition} $\gN$ \`e un ideale in $\gA$ (nel senso di Algebra I)
+    \item \label{ideal:setTheoryIdealDefinition} $\gN$ è un ideale secondo la definizionedi teoria degli insiemi, ossia se valgono le condizioni seguenti:
+    \begin{numcases}{}
+      \label{ideal:setTheoryIdealDefinitionC1} A \subseteq B \in \gN,\ A \in \gA \Rightarrow A \in \gN\\
+      \label{ideal:setTheoryIdealDefinitionC2} A, B \in \gN \Rightarrow A \cup B \in \gN
+    \end{numcases}
+    \item \label{ideal:varIdealDefinition} se $A \in \gA,\ B, C \in \gN$ e $A\subseteq B \cup C$ allora $A \in \gN$.
   \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Svolto da Ilaria.  
+  Mostriamo la catena di implicazioni $2\implies 3\implies 1$.
+  \begin{itemize}
+    \item[$2\implies 3$] Siano $A,B,C$ come nelle ipotesi di \cref{ideal:varIdealDefinition}. Allora per ipotesi vale \cref{ideal:setTheoryIdealDefinitionC2}, e quindi $B\cup C\in \gN$.
+    Usando quindi il fatto che $A\subseteq B\cup C$ e l'ipotesi \cref{ideal:setTheoryIdealDefinitionC1}, si ottiene $A\in \gN$.
+  \end{itemize}
 \end{proof}
 
 \begin{exercise}[13/10/2016]
-Sia $\gN$ un ideale di un anello $\gA$.
+  Sia $\gN$ un ideale di un anello $\gA$.
 \begin{enumerate}
 \item Descrivere l'insieme $\alg(\gN)$.
 \item Dimostrare che se $\gN$ è un $\sigma$-ideale in $\gA$ e se $\gM$ è un $\sigma$-anello allora $\alg(\gM)$ è in realtà una $\sigma$-algebra.
