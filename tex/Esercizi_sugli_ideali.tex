@@ -4,8 +4,13 @@
   Sia $\emptyset \neq \gN \subseteq \gA$ anello.
   Mostrare che le seguenti affermazioni sono equivalenti:
   \begin{enumerate}
-    \item \label{ideal:algebraIdealDefinition} $\gN$ \`e un ideale in $\gA$ (nel senso di Algebra I)
-    \item \label{ideal:setTheoryIdealDefinition} $\gN$ è un ideale secondo la definizionedi teoria degli insiemi, ossia se valgono le condizioni seguenti:
+    \item \label{ideal:algebraIdealDefinition} $\gN$ \`e un ideale in $\gA$ secondo la definizione usata in Algebra, ovvero
+    \begin{subnumcases}{}
+      A,B\in\gN \implies A\Delta B \in \gN \label{ideal:algebraIdealDefinitionC1}
+      \\
+      A\in\gN, B\in\gA \implies A \cap B \in \gN \label{ideal:algebraIdealDefinitionC2}      
+    \end{subnumcases}
+    \item \label{ideal:setTheoryIdealDefinition} $\gN$ è un ideale secondo la definizion usata ini teoria degli insiemi, ossia se valgono le condizioni seguenti:
     \begin{subnumcases}{}
       A \subseteq B \in \gN,\ A \in \gA \Rightarrow A \in \gN \label{ideal:setTheoryIdealDefinitionC1}
       \\
@@ -22,6 +27,11 @@
     \item[$3\implies 1$] Siano $A\in\gA, B\in\gN$; allora $\gA\ni A\cap B\subseteq B\cup B$ dunque per il \cref{ideal:varIdealDefinition} $A\cap B\in\gN$.
     
     Siano ora $A,B\in\gN$; allora per definizione di differenza simmetrica $\gA\ni A\Delta B\subseteq A\cup B$ e dunque per il \cref{ideal:varIdealDefinition} $A\Delta B\in\gN$.
+    \item[$1\implies 2$] Dimostriamo le due condizioni.
+    \begin{itemize}
+      \item[\ref{ideal:setTheoryIdealDefinitionC1}] Se $A,B$ soddisfano le ipotesi, allora $A=A\cap B\in\gN$ perché $B\in\gN$.
+      \item[\ref{ideal:setTheoryIdealDefinitionC2}] Se $A,B$ soddisfano le ipotesi, allora $A\cup B=(A\Delta B)\Delta (A\cap B)$ è la somma (dell'anello, quindi la differenza simmetrica) di due elementi che per definizione di ideale appartengono a $\gN$. Quindi per definizione $A\cup B\in\gN$. 
+    \end{itemize}
   \end{itemize}
 \end{proof}
 
