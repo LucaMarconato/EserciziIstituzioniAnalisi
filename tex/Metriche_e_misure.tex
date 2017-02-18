@@ -29,10 +29,12 @@
   \begin{enumerate}
     \item Mostriamo che se l'unione di un numero finito di elementi di $\gP$ appartiene a $\gP$, allora la misura dell'unione è la somma delle misure.
 
-    Sia quindi $\ico{a}{b}=\bigsqcup_{k=1}^{n}\ico{a_k}{b_k}$; a meno di un riordinamento \footnote{e forse di intervalli vuoti?} possiamo supporre che per
-    $2\leq k\leq n\ b_k=a_{k-1};\ a_1=a=b_0, b_n=b$.
-
-    Allora $\mu_g(\ico{a}{b})=g(b)-g(a)=\sum_{k=1}^n (g(b_k)-g(b_{k-1}))=\sum_{k=1}^n (g(b_k)-g(a_k))=\sum_{k=1}^n \mu_g(\ico{a_k}{b_k})$.
+    Sia quindi $\ico{a}{b}=\bigsqcup_{k=1}^{n}\ico{a_k}{b_k}$; a meno di un riordinamento \footnote{e forse di intervalli vuoti?} possiamo supporre che
+    $b_k=a_{k-1}\ \forall\ 2\leq k\leq n;\ a_1=a\eqqcolon b_0, b_n=b$. Allora
+    \begin{equation*}
+      \mu_g(\ico{a}{b})=g(b_n)-g(b_0)=\sum_{k=1}^n (g(b_k)-g(b_{k-1}))=\sum_{k=1}^n (g(b_k)-g(a_k))=\sum_{k=1}^n \mu_g(\ico{a_k}{b_k}).
+    \end{equation*}
+    che è quanto dovevamo dimostrare.
     \item Dimostriamo le due implicazioni.
     \begin{enumerate}
       \item[$\Rightarrow$] Supponiamo per assurdo che esista $(x_n)_{n\in \N}, x_n \rightarrow x^-$ e $g(x-\circ) < g(x)$; allora $\Delta_n=[x,x_n]\downarrow\emptyset$, ma $\mu_g(\Delta_n) \rightarrow g(x)-g(x-\circ)>0$, assurdo. 
