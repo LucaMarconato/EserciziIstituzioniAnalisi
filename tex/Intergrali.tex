@@ -31,6 +31,13 @@
     \item Il lemma di Fatou enunciato con l'uguaglianza.
   \end{enumerate}
 \end{exercise}
+\begin{proof}
+  Usiamo in entrambi i casi la misura di Lebesue su $\R$.
+  \begin{itemize}
+    \item Sia $f_{2n}=\charf{\ico{0}{1/2}},f_{2n+1}=\charf{\icc{1/2}{1}}$. Allora $\int f_{2n} \de \mu=\int f_{2n+1} \de \mu=1/2$, quindi $\limsup \int f_n \de \mu=1/2$, mentre $\limsup f_n=\charf{\icc{0}{1}}$ e quindi $\int\limsup f_n \de \mu=1$.
+    \item Sia $f_n=n \charf{\icc{0}{1/n}}$. Allora $\int f_n \de \mu=1$, e quindi $\liminf \int f_n \de \mu=1$; inoltre $\liminf f_n=0$ q.o. e quindi $\int\liminf f_n\de \mu=0$.
+  \end{itemize}
+\end{proof}
 \end{document}
 
 %%% Local Variables:
