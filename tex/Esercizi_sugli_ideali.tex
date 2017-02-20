@@ -110,7 +110,9 @@ Assegnato a Gaetano.
 \end{exercise}
 \begin{proof}
   \begin{enumerate}
-    \item La prima parte è stata svolta da Stefano.
+    \item Sappiamo che per un anello l'additività e la finita additività coincidono. Allora $\nu$ è finitamente additiva se e solo se ($\forall A,B\in\gA \nu(A\sqcup B)=0 \Leftrightarrow A\in\gN \land B \in \gN$), (dato che $\nu(A)=0 \Leftrightarrow A\in\gN$), e quindi se e solo se $A\sqcup B\in\gN \Leftrightarrow A\in\gN\land B\in\gN$.
+
+    Questo equivale a $B\subseteq A\in\gN\implies B\in\gN$ (perché $B\sqcup(A\setminus B)\in\gN$) e $A,B\in\gN \implies A\cup B\in\gN$ (questa è l'unione disgiunta di $A$ e $B\setminus A$, che usando la condizione appena trovata sono elementi di $\gN$; viceversa la condizione sull'unione implica chiaramente quella sull'unione disgiunta).
     \item Sappiamo già che gli insiemi di misura nulla formano un ideale. Resta quindi da dimostrare che $\nu$ è finitamente additiva se e solo se questo ideale è massimale.
     \begin{itemize}
       \item[$\Rightarrow$] Supponiamo che la misura sia finitamente additiva e per assurdo $\gN$ non sia massimale. Allora $\exists A\in\gA \st A\notin \gN, \compl{A}\notin\gN$. Allora $\nu(X)=\nu(A\sqcup \compl{A})=\nu(A)+\nu (\compl{A})=2$, assurdo.
