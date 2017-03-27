@@ -37,17 +37,30 @@
 
 \begin{exercise}[13/10/2016]
   Sia $\gN$ un ideale di un anello $\gA$.
-\begin{enumerate}
-\item Descrivere l'insieme $\alg(\gN)$.
-\item Dimostrare che se $\gN$ è un $\sigma$-ideale in $\gA$ e se $\gM$ è un $\sigma$-anello allora $\alg(\gM)$ è in realtà una $\sigma$-algebra.
-\end{enumerate}
+  \begin{enumerate}
+    \item Descrivere l'insieme $\alg(\gN)$.
+    \item Dimostrare che se $\gN$ è un $\sigma$-ideale in $\gA$ e se $\gM$ è un $\sigma$-anello allora $\alg(\gM)$ è in più una $\sigma$-algebra.
+  \end{enumerate}
 \end{exercise}
 \begin{proof}
-  Assegnato a Ilaria.
+  \begin{enumerate}
+    \item Sia $\gL=\gN \cup \hat\gN$, dove $\hat\gN=\left\{ X\setminus A \st A\in \gN  \right\}$. Dimostriamo che $\gL$ è un'algebra:
+    \begin{itemize}
+      \item dato che $\emptyset \in \gN$, abbiamo per definizione $X=X\setminus \emptyset\in \gL$; 
+      \item dimostriamo che $\gL$ è chiuso per differenza e unione. Dati $A,B\in \gL$ abbiamo le seguenti possibilità:
+      \begin{itemize}
+        \item $A,B\in\gN$. In questo caso $A\setminus B,\ A\cup B\in\gN\subseteq\gL$ perché $\gN$ è un anello;
+        \item esattamente uno tra $A$ e $B$ appartiene a $\gN$. Possiamo supporre $A, C\coloneqq X\setminus B \in\gN$. Allora $A\setminus B=A\cap C\in \gN$; $A\cup B=X\setminus C \cup A=X\setminus(C\setminus A)\in \hat \gN$.
+        \item $C\coloneqq X\setminus A, D\coloneqq X\setminus B\in \gN$. Allora $A\cup B=X\setminus (C\cap D)\in\hat\gN$; $B\setminus A=(X\setminus C)\setminus(X\setminus D)=D\setminus C \in \gN$
+      \end{itemize}
+    \end{itemize}
+    Dato che per definizione $\alg(\gN)$ deve contenere $X$ e quindi tutti gli elementi di $\hat\gN$, questo implica che  $\alg(\gN)=\gL$.
+    \item Basta dimostrare che $\gM$ è chiuso per unioni numerabili. Sia $C_n$ una successione di elementi di $\alg(\gN)$. Se $\forall n\ C_n\in\gN$ allora $C\coloneqq\bigcup_{n\in\N}C_n\in\gN$; altrimenti, dato che $\gN$ è un ideale, $\hat\gN$ è un filtro, quindi è chiuso per sovrainsiemi: sia allora $k\st C_k\in\hat\gN$; abbiamo che $C\supseteq C_k$, e quindi per la proprietà appena enunciata $C\in\hat\gN\subseteq \gM$.
+  \end{enumerate}
 \end{proof}
 
 \begin{exercise}[2016-10-13]
-Sia $\emptyset \neq \gE \subseteq \powerset(X)$ e sia $\emptyset \neq A \subseteq X$.
+  Sia $\emptyset \neq \gE \subseteq \powerset(X)$ e sia $\emptyset \neq A \subseteq X$.
 Allora $\sigma(\gE \cap A) = \sigma(\gE) \cap A$ avendo definito $\gE \cap A \coloneqq \left\lbrace E \cap A \colon E \in \gE\right\rbrace$.
 \begin{enumerate}
 \item Descrivere l'insieme $\alg(\gN)$.
