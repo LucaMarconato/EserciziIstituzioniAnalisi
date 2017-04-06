@@ -8,4 +8,24 @@
 \begin{proof}
   
 \end{proof}
+\begin{exercise}
+  \begin{gather*}
+    \mu^+(A)=\sup\{\mu(M)\st M\in \gA, M\subseteq A\}\\
+    \mu^-(A)=\inf\{\mu(M)\st M\in \gA, M\subseteq A\}\\
+    \abs{\mu(A)}=\sup\left\{\sum_{i=1}^n\abs\mu(A_i)\st n\in \N, \gA\ni A_i \text{ disgiunti, }A=\bigcup_{i=1}^{n}A_i\right\}\\
+    \gN(\mu)=\gN(\abs\mu)=\gN(\mu^+)\cap\gN(\mu^-)
+  \end{gather*}
+  (quindi $\gN(\mu)$ è un $\sigma$-ideale in  $\gA$).
+  
+  Se $\nu\colon \gA\to\Rpinf$ è una misura $\sigma$-additiva, $f\in\mathcal{L}_1(\nu)$, $\mu(A)\coloneqq\int_Af\de\nu$,
+  allora $\mu^+(A)=\int_Af^+\de \nu,\ \mu^-(A)=\int_Af^-\de\nu,\ \abs(\mu)(A)=\int_A\abs{f}\de\nu$.
+\end{exercise}
+\begin{proof}
+  
+\end{proof}
+\begin{exercise}
+  Sia $\alpha$ la misura di Lebesgue su $\Bor(\icc{0}{1})$, $\mu$ la counting measure su $\Bor(\icc{0}{1})$.
+
+  Dimostrare che $\nexists\lambda,\nu\colon\Bor(\icc{0}{1})\to \Rpinf$ misure $\sigma$-additive con $\mu=\lambda+\nu,\ \lambda \ll \alpha, \nu$
+\end{exercise}
 \end{document}
