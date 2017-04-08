@@ -25,7 +25,15 @@
 \end{proof}
 \begin{exercise}
   Sia $\alpha$ la misura di Lebesgue su $\Bor(\icc{0}{1})$, $\mu$ la counting measure su $\Bor(\icc{0}{1})$.
-
-  Dimostrare che $\nexists\lambda,\nu\colon\Bor(\icc{0}{1})\to \Rpinf$ misure $\sigma$-additive con $\mu=\lambda+\nu,\ \lambda \ll \alpha, \nu$
+  Dimostrare che $\nexists\lambda,\nu\colon\Bor(\icc{0}{1})\to \Rpinf$ misure $\sigma$-additive con $\mu=\lambda+\nu,\, \lambda \ll \alpha,\, \nu \perp \alpha$.
 \end{exercise}
+\begin{proof}
+  Siano per assurdo $\mu, \nu$ due misure che soddisfano le richieste.
+  Dimostriamo allora che $\gN(\nu)=\emptyset$.
+
+  Per $x\in\icc{0}{1}$ abbiamo $1=\mu(\{x\})=\lambda(\{x\})+\nu(\{x\})$, da cui $\nu(\{x\})=1$ dato che $\{x\}\in\gN(\alpha)\subseteq\gN(\lambda)$.
+  Sia allora $\emptyset\neq B\in\Bor(\icc{0}{1})$; per monotonia della misura, $\nu(B)\geq\nu(\{x\})$ per $x\in B$, che esiste per ipotesi.
+
+  Per definizione di singolarità tra misure $\exists N\in\gN(\nu),\, A\in\gN(\alpha)\st N\cup A=\icc{0}{1}$. Quindi deve essere $A=\icc{0}{1}$, che però non ha misura di Lebesgue nulla, e quindi non appartiene a $\gN(\alpha)$, assurdo.
+\end{proof}
 \end{document}
