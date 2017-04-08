@@ -1,5 +1,5 @@
 \documentclass[../EserciziIstituzioniAnalisi.tex]{subfiles} 
-\begin{document}
+\begin{document}                        %label prefix:metrics
 \begin{exercise}[2016-10-14]
   Sia $\gP \coloneqq \left\lbrace \ico{a}{b}: -\infty < a \leq b < +\infty\right\rbrace$, sia $g\colon \mathbb{R} \to \mathbb{R}$ crescente e sia $\mu_g(\ico{a}{b}) \coloneqq g(b) - g(a)$.
   \begin{enumerate}
@@ -35,16 +35,17 @@
   Sia $\gA$ un anello, $\eta\colon\gA\to\Rpinf$ una submisura. Sia come al solito $\gN(\eta)=\left\{A\in\gA\st\eta(A)=0\right\}$. Dimostrare che
   \begin{enumerate}
     \item Se $\gN(\eta)$ è un ideale di $\gA$ e $\eta$ è una $\sigma$-submisura, allora $\gN$ è un $\sigma$-ideale.
-    \item Se $A,B\in \gA$ e $A\Delta B\in \gN(\eta)$, allora $\eta(A)=\eta(A\cap B)=\eta(B)$.
+    \item \label{metrics:submeasure:deltaequality} Se $A,B\in \gA$ e $A\Delta B\in \gN(\eta)$, allora $\eta(A)=\eta(A\cap B)=\eta(B)$.
     \item Se $A\in \gA,\, N\in \gN(\eta)$, allora $\eta(A)=\eta(A\cup N)=\eta(A\Delta N)=\eta(A\setminus N)$
   \end{enumerate}
 \end{exercise}
 \begin{proof}
   \begin{enumerate}
-    \item Basta dimostrare che $\gN$ è chiuso per unioni numeribaili.
+    \item Basta dimostrare che $\gN$ è chiuso per unioni numerabili.
 
     Sia quindi $\gA\ni A=\bigcup_{n\in\N}A_n$, con $A_n\in\gN$. Allora $\eta(A)\leq\sum_{n\in\N}\eta(A_n)=0$.
     \item Per subadditività e dato che $A\subseteq A\cup B=(A\Delta B)\cup (A\cap B)$ si ottiene $\eta(A)\leq\eta(A\cap B)+\eta(A\Delta B)=\eta(A\cap B)$; per monotonia $\eta(A)\geq\eta(A\cap B)$, e dunque $\eta(A)=\eta(A\cap B)$. La seconda uguaglianza è analoga. 
+    \item Le ultime due uguaglianze si ottengono subito dal \cref{metrics:submeasure:deltaequality} perché $N=(A\Delta N)\Delta(A\setminus N)=(A\cup N)\Delta(A\setminus N)$. Inoltre per monotonia $\eta(A\setminus N)\leq\eta(A)\leq\eta(A\cup N)=\eta(A\setminus N)$, da cui la prima uguaglianza.
   \end{enumerate}
 \end{proof}
 \begin{exercise}[2016-10-20]
